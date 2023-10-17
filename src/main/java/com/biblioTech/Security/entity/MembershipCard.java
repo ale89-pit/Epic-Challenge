@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -25,12 +26,10 @@ public class MembershipCard {
 	@Id
 	private String id;
 	
-	@ManyToOne
-	@JoinColumn(name = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Library library;
 	
-	@ManyToOne
-	@JoinColumn(name = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)	
 	private User user;
 	
 	@Column(nullable = false)
