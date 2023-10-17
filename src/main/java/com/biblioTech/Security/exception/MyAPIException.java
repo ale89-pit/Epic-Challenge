@@ -3,6 +3,7 @@ package com.biblioTech.Security.exception;
 import org.springframework.http.HttpStatus;
 
 public class MyAPIException extends RuntimeException {
+	
 	private HttpStatus status;
     private String message;
     
@@ -25,4 +26,5 @@ public class MyAPIException extends RuntimeException {
     public String getMessage() {
         return message;
     }
+
 }

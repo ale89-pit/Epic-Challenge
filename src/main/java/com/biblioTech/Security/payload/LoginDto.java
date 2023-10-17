@@ -12,6 +12,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class LoginDto {
-    private String userName;
+    private String username;
     private String password;
 }
+
+//Il client dovrà inviare un oggetto JSON nel body con questa forma
+/*{
+    "username": "francescaneri",
+    "password": "qwerty"
+}*/
