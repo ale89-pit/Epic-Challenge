@@ -11,7 +11,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.biblioTech.Security.entity.ERole;
+import com.biblioTech.Enum.ERole;
 import com.biblioTech.Security.entity.Role;
 import com.biblioTech.Security.repository.RoleRepository;
 import com.biblioTech.Security.repository.UserRepository;
@@ -40,6 +40,10 @@ public class AuthRunner implements ApplicationRunner {
 		// Serve per salvare i ruoli nel DB
 		//setRoleDefault();
 		
+		if (roleRepository.findAll().isEmpty()) {
+			setRoleDefault();
+			
+		}
 	}
 	
 	private void setRoleDefault() {

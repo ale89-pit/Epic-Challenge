@@ -1,4 +1,4 @@
-package com.biblioTech.Security.entity;
+package com.biblioTech.Enum;
 
 public enum ERole {
 	ROLE_USER,

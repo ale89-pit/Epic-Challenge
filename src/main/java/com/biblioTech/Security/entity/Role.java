@@ -1,5 +1,7 @@
 package com.biblioTech.Security.entity;
 
+import com.biblioTech.Enum.ERole;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
