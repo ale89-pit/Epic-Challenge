@@ -1,16 +1,23 @@
 package com.biblioTech.Security.entity;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -35,9 +42,9 @@ public class Library {
 	@Column(nullable = false)
 	private String name;
 	
-//	@PrimaryKeyJoinColumn
-//	@OneToOne
-//	private Address address;
+	
+	@OneToOne
+	private Address address;
 	
 	@Column (unique=true, nullable = false)
 	private String email;
@@ -49,15 +56,22 @@ public class Library {
 	@Column(nullable = false)
 	private String phone;
 //	
-//	@OneToOne
-//	@PrimaryKeyJoinColumn
-//	private Map<Book, Integer> booklist;
-//	
-//	@ManyToMany
-//	private List<Book> booking;
 	
-//	@OneToMany(mappedBy = "id")
-//    private List<MembershipCard> membershipCards;
+	@ElementCollection
+    @CollectionTable(name = "library_books", joinColumns = @JoinColumn(name = "library_id"))
+    @MapKeyJoinColumn(name = "isbn")
+    @Column(name = "quantity")
+	private Map<Book, Integer> booklist = new HashMap<Book,Integer>();
+//	
+	@ManyToMany
+	@JoinTable(name = "library_booking",
+    joinColumns = @JoinColumn(name = "library_id", referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "booking_id", referencedColumnName = "id")
+)
+	private List<Booking> booking;
+	
+	@OneToMany
+    private List<MembershipCard> membershipCards;
 	
 }
 

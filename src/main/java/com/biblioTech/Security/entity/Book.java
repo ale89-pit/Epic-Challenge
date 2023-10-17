@@ -16,7 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Entity
+@Entity
 @Table(name = "book")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -48,7 +48,9 @@ public class Book {
 	
 	public String shelf;
 	
-	public String column;
+	public String col;
+	
+	
 	
 	
 }
