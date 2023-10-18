@@ -19668,3 +19668,1508 @@ Caused by: org.hibernate.AnnotationException: Association 'com.biblioTech.Securi
 19:23:42.863 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 19:23:42.865 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 0.624 seconds (process running for 5585.595)
 19:23:42.870 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+13:19:45.830 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12576 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:19:45.833 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:19:45.874 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:19:45.875 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:19:46.397 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:19:46.464 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 9 JPA repository interfaces.
+13:19:46.718 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:19:46.756 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:19:47.082 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:19:47.091 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:19:47.091 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:19:47.145 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:19:47.146 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1271 ms
+13:19:47.278 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:19:47.318 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:19:47.321 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:19:47.420 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:19:47.515 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:19:47.530 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:19:47.661 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14360cd1
+13:19:47.662 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:19:47.918 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:19:48.527 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:19:48.540 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.540 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:19:48.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:19:48.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:19:48.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:19:48.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:19:48.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:19:48.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:19:48.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:19:48.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:19:48.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:19:48.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:19:48.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:19:48.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:19:48.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:19:48.549 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.549 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:19:48.549 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:19:48.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:19:48.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.551 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:19:48.551 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.551 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:19:48.551 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.552 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:19:48.552 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.552 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:19:48.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:19:48.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:19:48.554 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.554 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:19:48.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:19:48.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:19:48.556 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.556 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:19:48.557 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:19:48.557 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:19:48.644 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:19:49.179 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:19:49.407 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e04d408, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@255c5c87, org.springframework.security.web.context.SecurityContextHolderFilter@7e95234c, org.springframework.security.web.header.HeaderWriterFilter@3b384a6b, org.springframework.web.filter.CorsFilter@79ab99ca, org.springframework.security.web.authentication.logout.LogoutFilter@5aa3606f, com.biblioTech.Security.security.JwtAuthenticationFilter@7b1af5b4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@683cde2b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7987fbbe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38e8e14d, org.springframework.security.web.session.SessionManagementFilter@7517c21d, org.springframework.security.web.access.ExceptionTranslationFilter@4e1bba48, org.springframework.security.web.access.intercept.AuthorizationFilter@19e652b5]
+13:19:49.520 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:19:49.654 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:19:49.686 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:19:49.696 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.186 seconds (process running for 5.13)
+13:19:49.822 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:19:49.838 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: C:\Users\Manu\Desktop\Epicode\Eclipse workspace\Epic-Challenge\src\main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:19:49.857 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:19:49.895 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:19:49.897 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:20:46.454 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12609 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:20:46.456 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:20:46.495 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:20:46.495 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:20:46.991 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:20:47.053 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 9 JPA repository interfaces.
+13:20:47.299 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:20:47.335 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:20:47.641 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:20:47.649 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:20:47.650 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:20:47.705 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:20:47.705 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1209 ms
+13:20:47.828 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:20:47.870 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:20:47.872 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:20:47.970 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:20:48.066 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:20:48.079 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:20:48.208 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@506688c6
+13:20:48.209 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:20:48.447 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:20:49.108 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:20:49.123 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.123 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:20:49.123 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.123 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:20:49.124 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.124 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:20:49.124 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.125 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:20:49.125 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.126 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:20:49.126 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.127 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:20:49.127 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.127 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:20:49.128 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.128 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:20:49.128 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.129 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:20:49.129 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.129 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:20:49.130 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.130 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:20:49.130 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.131 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:20:49.131 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.131 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:20:49.132 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.132 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:20:49.133 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.133 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:20:49.134 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.134 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:20:49.135 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.135 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:20:49.135 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:20:49.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:20:49.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:20:49.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:20:49.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:20:49.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:20:49.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:20:49.139 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.139 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:20:49.139 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.139 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:20:49.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:20:49.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:20:49.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:20:49.206 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:20:49.757 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:20:49.998 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d01efa5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ab0ea02, org.springframework.security.web.context.SecurityContextHolderFilter@150d155, org.springframework.security.web.header.HeaderWriterFilter@72bd9b6f, org.springframework.web.filter.CorsFilter@52bb13df, org.springframework.security.web.authentication.logout.LogoutFilter@211e13ac, com.biblioTech.Security.security.JwtAuthenticationFilter@c49ce60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bbc2fc8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4956231d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@364f583b, org.springframework.security.web.session.SessionManagementFilter@3b7ec53f, org.springframework.security.web.access.ExceptionTranslationFilter@1c00462d, org.springframework.security.web.access.intercept.AuthorizationFilter@7b65807f]
+13:20:50.115 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:20:50.255 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:20:50.288 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:20:50.298 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.097 seconds (process running for 4.77)
+13:20:50.424 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:20:50.441 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: C:\Utenti\Manu\Desktop\Epicode\Eclipse workspace\Epic-Challenge\src\main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:20:50.461 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:20:50.493 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:20:50.496 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:21:49.747 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12636 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:21:49.750 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:21:49.795 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:21:49.795 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:21:50.337 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:21:50.406 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 9 JPA repository interfaces.
+13:21:50.694 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:21:50.732 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:21:51.045 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:21:51.053 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:21:51.053 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:21:51.107 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:21:51.108 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1311 ms
+13:21:51.236 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:21:51.278 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:21:51.280 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:21:51.378 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:21:51.474 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:21:51.487 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:21:51.618 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58eaf471
+13:21:51.620 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:21:51.870 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:21:52.523 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:21:52.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:21:52.549 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.549 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:21:52.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:21:52.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.550 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:21:52.551 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.551 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:21:52.552 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.552 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:21:52.552 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:21:52.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.553 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:21:52.554 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.554 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:21:52.554 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.554 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:21:52.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:21:52.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.555 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:21:52.556 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.556 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:21:52.556 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.556 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:21:52.557 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.557 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:21:52.558 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.558 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:21:52.558 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.558 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:21:52.559 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.559 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:21:52.559 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.560 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:21:52.560 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.560 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:21:52.560 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.560 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:21:52.561 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.561 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:21:52.562 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.562 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:21:52.562 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.562 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:21:52.562 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.563 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:21:52.563 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.563 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:21:52.563 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.564 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:21:52.564 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:21:52.564 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:21:52.633 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:21:53.177 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:21:53.399 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@255c5c87, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79ab99ca, org.springframework.security.web.context.SecurityContextHolderFilter@35d911a9, org.springframework.security.web.header.HeaderWriterFilter@540e1ddb, org.springframework.web.filter.CorsFilter@38e8e14d, org.springframework.security.web.authentication.logout.LogoutFilter@181b40a9, com.biblioTech.Security.security.JwtAuthenticationFilter@58f58631, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e5f327a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aef97e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1064c6cc, org.springframework.security.web.session.SessionManagementFilter@48b2a158, org.springframework.security.web.access.ExceptionTranslationFilter@2fa403e3, org.springframework.security.web.access.intercept.AuthorizationFilter@7b8a0c]
+13:21:53.516 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:21:53.652 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:21:53.683 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:21:53.693 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.237 seconds (process running for 5.073)
+13:21:53.813 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:21:53.828 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: Macintosh HD\Utenti\Manu\Desktop\Epicode\Eclipse workspace\Epic-Challenge\src\main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:21:53.847 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:21:53.878 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:21:53.881 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:22:50.493 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12681 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:22:50.496 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:22:50.539 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:22:50.539 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:22:51.075 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:22:51.138 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 9 JPA repository interfaces.
+13:22:51.407 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:22:51.446 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:22:51.762 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:22:51.773 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:22:51.773 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:22:51.829 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:22:51.830 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1291 ms
+13:22:51.956 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:22:52.001 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:22:52.003 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:22:52.107 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:22:52.199 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:22:52.211 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:22:52.337 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@289ee6f
+13:22:52.338 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:22:52.552 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:22:53.136 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:22:53.148 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.148 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:22:53.148 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.149 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:22:53.149 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.149 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:22:53.149 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.149 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:22:53.150 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.150 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:22:53.151 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.151 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:22:53.151 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.152 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:22:53.152 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.152 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:22:53.153 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.153 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:22:53.153 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.153 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:22:53.154 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.154 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:22:53.154 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.154 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:22:53.155 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.155 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:22:53.155 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.155 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:22:53.156 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.156 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:22:53.156 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.156 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:22:53.157 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.157 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:22:53.158 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.158 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:22:53.158 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.158 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:22:53.159 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.159 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:22:53.159 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.159 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:22:53.160 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.160 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:22:53.161 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.161 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:22:53.161 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.161 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:22:53.162 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.162 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:22:53.163 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.163 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:22:53.164 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.164 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:22:53.165 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:22:53.165 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:22:53.239 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:22:53.782 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:22:53.997 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53f4aa5a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17c81352, org.springframework.security.web.context.SecurityContextHolderFilter@4bc665cc, org.springframework.security.web.header.HeaderWriterFilter@618019ff, org.springframework.web.filter.CorsFilter@3d3228fd, org.springframework.security.web.authentication.logout.LogoutFilter@603e4a0e, com.biblioTech.Security.security.JwtAuthenticationFilter@5b256658, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e13e8a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c2541ca, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d81c129, org.springframework.security.web.session.SessionManagementFilter@7c517b9c, org.springframework.security.web.access.ExceptionTranslationFilter@1c61122b, org.springframework.security.web.access.intercept.AuthorizationFilter@6d6523bd]
+13:22:54.118 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:22:54.267 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:22:54.314 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:22:54.326 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.135 seconds (process running for 4.835)
+13:22:54.460 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:22:54.476 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: Utenti\Manu\Desktop\Epicode\Eclipse workspace\Epic-Challenge\src\main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:22:54.495 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:22:54.535 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:22:54.538 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:25:59.962 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12755 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:25:59.965 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:26:00.008 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:26:00.008 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:26:01.190 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:26:01.267 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 9 JPA repository interfaces.
+13:26:01.547 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:26:01.606 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:26:02.137 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:26:02.145 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:26:02.146 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:26:02.214 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:26:02.214 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2205 ms
+13:26:02.349 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:26:02.392 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:26:02.394 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:26:02.501 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:26:02.607 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:26:02.625 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:26:02.794 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@58eaf471
+13:26:02.795 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:26:03.064 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:26:03.899 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:26:03.917 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.917 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:26:03.918 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.918 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:26:03.918 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.918 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:26:03.919 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.919 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:26:03.919 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.920 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:26:03.921 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.921 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:26:03.921 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.922 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:26:03.922 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.922 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:26:03.923 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.923 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:26:03.923 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.923 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:26:03.924 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.924 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:26:03.924 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.924 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:26:03.925 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.925 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:26:03.927 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.927 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:26:03.928 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.928 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:26:03.929 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.929 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:26:03.929 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:26:03.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:26:03.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:26:03.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:26:03.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:26:03.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:26:03.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:26:03.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:26:03.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:26:03.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:26:03.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:26:03.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:03.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:26:04.013 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:26:04.957 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:26:05.247 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@255c5c87, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79ab99ca, org.springframework.security.web.context.SecurityContextHolderFilter@35d911a9, org.springframework.security.web.header.HeaderWriterFilter@540e1ddb, org.springframework.web.filter.CorsFilter@38e8e14d, org.springframework.security.web.authentication.logout.LogoutFilter@181b40a9, com.biblioTech.Security.security.JwtAuthenticationFilter@58f58631, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e5f327a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aef97e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1064c6cc, org.springframework.security.web.session.SessionManagementFilter@48b2a158, org.springframework.security.web.access.ExceptionTranslationFilter@2fa403e3, org.springframework.security.web.access.intercept.AuthorizationFilter@7b8a0c]
+13:26:05.399 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:26:05.566 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:26:05.609 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:26:05.626 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 5.998 seconds (process running for 6.976)
+13:26:05.800 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:26:05.816 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: user.home/Desktop\Epicode\Eclipse workspace\Epic-Challenge\src\main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:26:05.843 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:26:05.888 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:26:05.892 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:26:35.892 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12778 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:26:35.895 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:26:35.937 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:26:35.937 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:26:36.472 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:26:36.541 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 9 JPA repository interfaces.
+13:26:36.801 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:26:36.839 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:26:37.153 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:26:37.161 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:26:37.162 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:26:37.217 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:26:37.217 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1279 ms
+13:26:37.341 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:26:37.383 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:26:37.386 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:26:37.485 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:26:37.584 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:26:37.597 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:26:37.735 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@10fbd8b7
+13:26:37.736 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:26:37.986 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:26:38.667 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:26:38.681 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.681 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:26:38.682 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.682 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:26:38.683 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.683 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:26:38.683 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.683 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:26:38.684 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.684 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:26:38.685 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.685 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:26:38.686 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.686 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:26:38.687 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.687 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:26:38.688 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.688 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:26:38.688 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.688 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:26:38.689 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.689 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:26:38.689 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.689 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:26:38.690 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.690 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:26:38.690 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.690 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:26:38.691 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.691 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:26:38.692 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.692 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:26:38.692 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.692 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:26:38.693 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.693 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:26:38.693 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.693 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:26:38.693 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.694 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:26:38.694 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.694 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:26:38.695 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.695 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:26:38.695 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.696 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:26:38.697 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.697 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:26:38.698 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.698 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:26:38.698 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.698 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:26:38.699 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.699 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:26:38.699 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:26:38.699 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:26:38.767 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:26:39.343 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:26:39.590 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6efff8a7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9b27823, org.springframework.security.web.context.SecurityContextHolderFilter@5898ef9c, org.springframework.security.web.header.HeaderWriterFilter@6bba2dad, org.springframework.web.filter.CorsFilter@75f161c8, org.springframework.security.web.authentication.logout.LogoutFilter@23274b3b, com.biblioTech.Security.security.JwtAuthenticationFilter@452bc273, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50d0f486, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69ad198d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cdb1835, org.springframework.security.web.session.SessionManagementFilter@12979410, org.springframework.security.web.access.ExceptionTranslationFilter@65779f80, org.springframework.security.web.access.intercept.AuthorizationFilter@6d11576c]
+13:26:39.710 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:26:39.851 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:26:39.885 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:26:39.895 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.319 seconds (process running for 5.032)
+13:26:40.017 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:26:40.032 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: user.home/Desktop/Epicode/Eclipse workspace/Epic-Challenge/src/main/resources/province-italiane.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:26:40.051 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:26:40.083 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:26:40.086 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:28:12.690 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12842 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:28:12.693 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:28:12.735 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:28:12.735 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:28:13.283 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:28:13.352 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 9 JPA repository interfaces.
+13:28:13.627 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:28:13.666 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:28:13.992 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:28:14.001 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:28:14.002 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:28:14.059 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:28:14.059 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1324 ms
+13:28:14.182 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:28:14.224 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:28:14.227 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:28:14.331 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:28:14.434 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:28:14.447 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:28:14.603 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5433c818
+13:28:14.604 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:28:14.854 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:28:15.508 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:28:15.533 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.534 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:28:15.534 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.534 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:28:15.535 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.535 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:28:15.535 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.535 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:28:15.536 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.536 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:28:15.537 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.537 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:28:15.538 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.538 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:28:15.539 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.539 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:28:15.539 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.539 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:28:15.540 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.540 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:28:15.540 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.540 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:28:15.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:28:15.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.541 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:28:15.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:28:15.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.542 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:28:15.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:28:15.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.543 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:28:15.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:28:15.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.544 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:28:15.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:28:15.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:28:15.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.545 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:28:15.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:28:15.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.546 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:28:15.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:28:15.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:28:15.547 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:28:15.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:28:15.548 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:28:15.614 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:28:16.195 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:28:16.439 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1565650f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13579806, org.springframework.security.web.context.SecurityContextHolderFilter@2644531f, org.springframework.security.web.header.HeaderWriterFilter@724caffe, org.springframework.web.filter.CorsFilter@50c42497, org.springframework.security.web.authentication.logout.LogoutFilter@7fa21f23, com.biblioTech.Security.security.JwtAuthenticationFilter@39f8561, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28ee0dd0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c517b9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@531679cd, org.springframework.security.web.session.SessionManagementFilter@44c3d134, org.springframework.security.web.access.ExceptionTranslationFilter@7dd742d2, org.springframework.security.web.access.intercept.AuthorizationFilter@7befbb6e]
+13:28:16.554 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:28:16.695 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:28:16.732 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:28:16.742 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.365 seconds (process running for 5.25)
+13:28:16.865 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:28:16.880 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: /Users/manu/Desktop/Epicode/Eclipse workspace/Epic-Challenge/src/main/resources/province-italiane.csv (Not a directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:32)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:28:16.899 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:28:16.932 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:28:16.935 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:33:06.164 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12949 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:33:06.167 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:33:06.209 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:33:06.209 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:33:06.736 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:33:06.800 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 9 JPA repository interfaces.
+13:33:07.050 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:33:07.088 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:33:07.401 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:33:07.410 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:33:07.411 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:33:07.465 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:33:07.465 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1256 ms
+13:33:07.593 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:33:07.640 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:33:07.642 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:33:07.746 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:33:07.852 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:33:07.865 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:33:07.998 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5433c818
+13:33:08.002 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:33:08.240 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:33:08.872 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:33:08.886 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.887 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:33:08.887 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.887 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:33:08.888 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.888 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:33:08.888 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.888 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:33:08.889 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.889 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:33:08.890 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.890 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:33:08.891 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.891 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:33:08.891 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.892 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:33:08.892 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.892 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:33:08.893 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.893 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:33:08.893 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.894 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:33:08.894 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.895 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:33:08.896 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.896 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:33:08.896 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.896 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:33:08.897 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.897 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:33:08.897 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.898 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:33:08.898 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.898 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:33:08.898 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.898 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:33:08.899 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.899 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:33:08.899 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.899 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:33:08.899 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.900 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:33:08.900 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.900 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:33:08.900 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.900 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:33:08.901 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.901 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:33:08.901 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.901 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:33:08.901 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.902 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:33:08.902 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.902 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:33:08.902 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:08.902 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:33:08.970 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:33:09.533 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:33:09.778 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1565650f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13579806, org.springframework.security.web.context.SecurityContextHolderFilter@2644531f, org.springframework.security.web.header.HeaderWriterFilter@724caffe, org.springframework.web.filter.CorsFilter@50c42497, org.springframework.security.web.authentication.logout.LogoutFilter@7fa21f23, com.biblioTech.Security.security.JwtAuthenticationFilter@39f8561, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28ee0dd0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c517b9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@531679cd, org.springframework.security.web.session.SessionManagementFilter@44c3d134, org.springframework.security.web.access.ExceptionTranslationFilter@7dd742d2, org.springframework.security.web.access.intercept.AuthorizationFilter@7befbb6e]
+13:33:09.901 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:33:10.049 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:33:10.085 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:33:10.095 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.223 seconds (process running for 5.119)
+13:33:10.363 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:33:10.380 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: C:\Users\Manu\Desktop\Epicode\Eclipse workspace\Epic-Challenge\src\main/resources/comuni-italiani.csv (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:52)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765)
+	... 10 common frames omitted
+13:33:10.400 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:33:10.431 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:33:10.434 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:33:42.278 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12967 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+13:33:42.280 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+13:33:42.319 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+13:33:42.319 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+13:33:42.812 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:33:42.874 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 9 JPA repository interfaces.
+13:33:43.126 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:33:43.162 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+13:33:43.465 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:33:43.473 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:33:43.473 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+13:33:43.527 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:33:43.528 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1208 ms
+13:33:43.654 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:33:43.696 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+13:33:43.698 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:33:43.794 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:33:43.890 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:33:43.903 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:33:44.042 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@434f71c1
+13:33:44.043 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:33:44.298 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:33:44.913 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:33:44.926 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.926 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+13:33:44.927 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.927 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+13:33:44.927 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.927 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+13:33:44.928 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.928 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:33:44.928 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.928 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+13:33:44.929 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.929 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:33:44.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+13:33:44.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.930 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:33:44.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+13:33:44.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.931 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:33:44.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+13:33:44.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.932 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+13:33:44.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+13:33:44.933 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:33:44.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+13:33:44.934 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+13:33:44.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+13:33:44.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.935 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+13:33:44.936 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.936 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+13:33:44.936 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.937 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+13:33:44.937 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.937 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+13:33:44.938 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.938 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+13:33:44.938 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.938 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+13:33:44.939 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.939 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+13:33:44.939 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.940 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+13:33:44.940 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.940 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+13:33:44.940 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.940 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+13:33:44.941 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:33:44.941 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+13:33:45.010 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:33:45.580 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:33:45.799 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cf645ad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d832179, org.springframework.security.web.context.SecurityContextHolderFilter@4bdeefa2, org.springframework.security.web.header.HeaderWriterFilter@503084dc, org.springframework.web.filter.CorsFilter@166fd806, org.springframework.security.web.authentication.logout.LogoutFilter@3168fe88, com.biblioTech.Security.security.JwtAuthenticationFilter@26e311eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1141aa72, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@599c2649, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dea4646, org.springframework.security.web.session.SessionManagementFilter@4a9647e9, org.springframework.security.web.access.ExceptionTranslationFilter@1f78ce4e, org.springframework.security.web.access.intercept.AuthorizationFilter@13385391]
+13:33:45.913 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+13:33:46.046 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+13:33:46.078 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:33:46.088 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 4.062 seconds (process running for 4.704)
+14:48:03.292 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+14:48:03.310 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:48:03.314 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+14:48:03.322 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:48:03.373 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:48:03.376 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:48:03.523 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12967 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+14:48:03.524 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+14:48:03.711 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:48:03.736 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 9 JPA repository interfaces.
+14:48:03.814 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:48:03.816 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+14:48:03.905 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:48:03.906 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:48:03.907 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+14:48:03.924 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:48:03.924 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 398 ms
+14:48:03.993 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:48:03.999 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:48:04.000 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:48:04.001 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+14:48:04.028 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@26d03519
+14:48:04.028 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+14:48:04.071 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:48:04.184 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:48:04.185 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.185 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+14:48:04.186 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.186 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+14:48:04.186 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.186 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+14:48:04.187 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.187 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:48:04.187 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.187 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:48:04.187 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.187 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:48:04.188 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.188 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:48:04.188 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.188 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:48:04.188 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.188 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:48:04.189 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.189 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:48:04.189 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.189 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:48:04.189 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.190 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:48:04.191 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.191 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+14:48:04.191 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.191 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+14:48:04.191 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.191 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.192 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.193 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+14:48:04.194 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:04.194 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+14:48:04.271 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:48:04.594 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:48:04.717 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4def890e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2023e697, org.springframework.security.web.context.SecurityContextHolderFilter@71d66da6, org.springframework.security.web.header.HeaderWriterFilter@ed514d3, org.springframework.web.filter.CorsFilter@47b05317, org.springframework.security.web.authentication.logout.LogoutFilter@687f275b, com.biblioTech.Security.security.JwtAuthenticationFilter@18f0b34e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1becdb24, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3db93706, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14076a62, org.springframework.security.web.session.SessionManagementFilter@d0cf22b, org.springframework.security.web.access.ExceptionTranslationFilter@5d96e8d0, org.springframework.security.web.access.intercept.AuthorizationFilter@ca75c6]
+14:48:04.778 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+14:48:04.869 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:48:04.886 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:48:04.891 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 1.395 seconds (process running for 4463.408)
+14:48:04.902 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+14:48:04.920 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.Error: Unresolved compilation problem: 
+	The operator / is undefined for the argument type(s) java.lang.String, java.lang.String
+
+	at com.biblioTech.Security.runner.ProvinceRunner.run(ProvinceRunner.java:38) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765) ~[spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:755) ~[spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322) ~[spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) ~[spring-boot-3.1.4.jar:3.1.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) ~[spring-boot-3.1.4.jar:3.1.4]
+	at com.biblioTech.EpicChallengeApplication.main(EpicChallengeApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.4.jar:3.1.4]
+14:48:04.933 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:48:04.964 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+14:48:04.965 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+14:48:19.543 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12967 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+14:48:19.543 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+14:48:19.717 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:48:19.745 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 9 JPA repository interfaces.
+14:48:19.807 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:48:19.809 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+14:48:19.877 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:48:19.878 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:48:19.878 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+14:48:19.892 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:48:19.892 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 347 ms
+14:48:19.961 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:48:19.967 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:48:19.967 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:48:19.968 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+14:48:19.993 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@436f2ff1
+14:48:19.993 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+14:48:20.032 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:48:20.133 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:48:20.135 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.135 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+14:48:20.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+14:48:20.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.136 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+14:48:20.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:48:20.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.137 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:48:20.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:48:20.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:48:20.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.138 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:48:20.139 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.139 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:48:20.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:48:20.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.140 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:48:20.141 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.141 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+14:48:20.141 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.141 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+14:48:20.141 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.142 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:48:20.142 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.142 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:48:20.142 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.142 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+14:48:20.142 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.143 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+14:48:20.144 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.144 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+14:48:20.144 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.144 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+14:48:20.145 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.145 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+14:48:20.145 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.145 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+14:48:20.145 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.145 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+14:48:20.146 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.146 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+14:48:20.147 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.147 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+14:48:20.147 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:48:20.147 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+14:48:20.215 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:48:20.547 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:48:20.662 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@41a14f25, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61bf825, org.springframework.security.web.context.SecurityContextHolderFilter@6b4ee9f4, org.springframework.security.web.header.HeaderWriterFilter@1474e927, org.springframework.web.filter.CorsFilter@5c47236d, org.springframework.security.web.authentication.logout.LogoutFilter@34ee6266, com.biblioTech.Security.security.JwtAuthenticationFilter@7e21ed8f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e5aea2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dd41d12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@461b15ea, org.springframework.security.web.session.SessionManagementFilter@1b0bcd30, org.springframework.security.web.access.ExceptionTranslationFilter@5f9d578d, org.springframework.security.web.access.intercept.AuthorizationFilter@701d4b64]
+14:48:20.708 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+14:48:20.787 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:48:20.800 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:48:20.805 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 1.28 seconds (process running for 4479.321)
+14:48:30.851 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+14:49:22.895 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+14:49:22.900 [Thread-7] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:49:22.902 [Thread-7] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-3 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+14:49:22.906 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:49:22.948 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+14:49:22.950 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+14:49:23.054 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 12967 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+14:49:23.055 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+14:49:23.245 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:49:23.274 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 9 JPA repository interfaces.
+14:49:23.335 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:49:23.337 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+14:49:23.408 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:49:23.408 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:49:23.408 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+14:49:23.422 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:49:23.422 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 364 ms
+14:49:23.479 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:49:23.483 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:49:23.483 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:49:23.484 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+14:49:23.509 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@5d85219c
+14:49:23.512 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+14:49:23.549 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:49:23.639 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:49:23.640 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.640 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+14:49:23.640 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.640 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+14:49:23.641 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.641 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+14:49:23.641 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.641 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:49:23.641 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.641 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.642 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:49:23.643 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.643 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:49:23.643 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.643 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:49:23.643 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.643 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+14:49:23.644 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.644 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+14:49:23.644 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.644 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:49:23.644 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.644 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:49:23.645 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.645 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+14:49:23.645 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.645 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+14:49:23.645 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.645 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.646 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+14:49:23.647 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.647 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+14:49:23.647 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.647 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+14:49:23.647 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.647 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+14:49:23.648 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.648 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+14:49:23.648 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.648 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+14:49:23.648 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:49:23.648 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+14:49:23.716 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:49:24.052 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:49:24.169 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ee06b51, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44b8fe1b, org.springframework.security.web.context.SecurityContextHolderFilter@5c8da73d, org.springframework.security.web.header.HeaderWriterFilter@30dfd76f, org.springframework.web.filter.CorsFilter@4a57218e, org.springframework.security.web.authentication.logout.LogoutFilter@42a700a6, com.biblioTech.Security.security.JwtAuthenticationFilter@5c1704af, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40f51dd3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e5fde0d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c0843a3, org.springframework.security.web.session.SessionManagementFilter@6bd2da5c, org.springframework.security.web.access.ExceptionTranslationFilter@704d953a, org.springframework.security.web.access.intercept.AuthorizationFilter@5a8b9a55]
+14:49:24.216 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+14:49:24.291 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:49:24.305 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:49:24.310 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 1.281 seconds (process running for 4542.825)
+14:49:32.341 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+14:50:08.343 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 14754 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+14:50:08.346 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+14:50:08.394 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:50:08.395 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:50:09.045 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:50:09.124 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 9 JPA repository interfaces.
+14:50:09.433 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:50:09.476 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+14:50:09.827 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:50:09.838 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:50:09.839 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+14:50:09.899 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:50:09.899 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1504 ms
+14:50:10.046 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:50:10.093 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+14:50:10.096 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+14:50:10.213 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:50:10.329 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:50:10.344 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:50:10.490 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6946d638
+14:50:10.492 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:50:10.784 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:50:11.503 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:50:11.636 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:50:12.253 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:50:12.514 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c5df35a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2952ad9c, org.springframework.security.web.context.SecurityContextHolderFilter@5e66e9fa, org.springframework.security.web.header.HeaderWriterFilter@55aa1ede, org.springframework.web.filter.CorsFilter@3736eefb, org.springframework.security.web.authentication.logout.LogoutFilter@2a4c4796, com.biblioTech.Security.security.JwtAuthenticationFilter@57957ef1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@267f3b67, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f774b07, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dda13be, org.springframework.security.web.session.SessionManagementFilter@341f61a5, org.springframework.security.web.access.ExceptionTranslationFilter@4ff54235, org.springframework.security.web.access.intercept.AuthorizationFilter@1402210c]
+14:50:12.639 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+14:50:12.789 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+14:50:12.814 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+14:50:12.817 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:50:12.866 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:50:12.868 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:50:12.871 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:50:12.887 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+14:50:12.912 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+14:50:16.350 [RMI TCP Connection(80)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+14:50:16.354 [RMI TCP Connection(80)-127.0.0.1] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+14:50:16.355 [RMI TCP Connection(80)-127.0.0.1] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-4 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.7/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.7/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.7/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.7/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.7/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.7/java.lang.Thread.run(Thread.java:833)
+14:50:16.358 [RMI TCP Connection(80)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:50:16.359 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.359 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.360 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.361 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.362 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.363 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.364 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:16.365 [RMI TCP Connection(80)-127.0.0.1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+14:50:16.366 [RMI TCP Connection(80)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+14:50:16.367 [RMI TCP Connection(80)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+14:50:19.370 [restartedMain] INFO  c.b.EpicChallengeApplication - Starting EpicChallengeApplication using Java 17.0.7 with PID 14769 (/Users/manu/Epicode/Eclipse workspace/Epic-Challenge/target/classes started by manu in /Users/manu/Epicode/Eclipse workspace/Epic-Challenge)
+14:50:19.373 [restartedMain] INFO  c.b.EpicChallengeApplication - No active profile set, falling back to 1 default profile: "default"
+14:50:19.420 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:50:19.420 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:50:20.046 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:50:20.118 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 9 JPA repository interfaces.
+14:50:20.450 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:50:20.497 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+14:50:20.862 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+14:50:20.872 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:50:20.872 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+14:50:20.941 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:50:20.942 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1520 ms
+14:50:21.085 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:50:21.134 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.9.Final
+14:50:21.137 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+14:50:21.255 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:50:21.381 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:50:21.397 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:50:21.575 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@781ef497
+14:50:21.576 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:50:21.987 [restartedMain] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+14:50:22.725 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:50:22.743 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.743 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "address" does not exist, skipping
+14:50:22.743 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.744 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "booking" does not exist, skipping
+14:50:22.744 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.744 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library" does not exist, skipping
+14:50:22.745 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.745 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:50:22.745 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.746 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_booking" does not exist, skipping
+14:50:22.746 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.747 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:50:22.747 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.747 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_books" does not exist, skipping
+14:50:22.748 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.748 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:50:22.748 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.748 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "library_membership_cards" does not exist, skipping
+14:50:22.749 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.749 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:50:22.750 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.750 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "membership_card" does not exist, skipping
+14:50:22.751 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.751 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "municipality" does not exist, skipping
+14:50:22.752 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.752 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users" does not exist, skipping
+14:50:22.752 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.752 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:50:22.753 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.753 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "users_roles" does not exist, skipping
+14:50:22.753 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.754 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "address" does not exist, skipping
+14:50:22.754 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.754 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "book" does not exist, skipping
+14:50:22.755 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.755 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "booking" does not exist, skipping
+14:50:22.755 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.755 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library" does not exist, skipping
+14:50:22.756 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.756 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_booking" does not exist, skipping
+14:50:22.756 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.756 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_books" does not exist, skipping
+14:50:22.757 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.757 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "library_membership_cards" does not exist, skipping
+14:50:22.757 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.757 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "membership_card" does not exist, skipping
+14:50:22.758 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.758 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "municipality" does not exist, skipping
+14:50:22.758 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.758 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "province" does not exist, skipping
+14:50:22.759 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.759 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "roles" does not exist, skipping
+14:50:22.760 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.760 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users" does not exist, skipping
+14:50:22.761 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:50:22.761 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "users_roles" does not exist, skipping
+14:50:22.845 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:50:23.526 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:50:23.787 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42774f4d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ccb51e9, org.springframework.security.web.context.SecurityContextHolderFilter@606f6e5b, org.springframework.security.web.header.HeaderWriterFilter@27c88e49, org.springframework.web.filter.CorsFilter@2b0f8884, org.springframework.security.web.authentication.logout.LogoutFilter@768abc20, com.biblioTech.Security.security.JwtAuthenticationFilter@49fef25f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4fb6f046, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26bdc227, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@219990ac, org.springframework.security.web.session.SessionManagementFilter@11e715b0, org.springframework.security.web.access.ExceptionTranslationFilter@59932147, org.springframework.security.web.access.intercept.AuthorizationFilter@77f3243e]
+14:50:23.916 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+14:50:24.071 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:50:24.106 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+14:50:24.133 [restartedMain] INFO  c.b.EpicChallengeApplication - Started EpicChallengeApplication in 5.126 seconds (process running for 5.95)
