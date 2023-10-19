@@ -65,14 +65,14 @@ public class Library {
     @Column(name = "quantity")
 	private Map<Book, Integer> booklist = new HashMap<Book,Integer>();
 //	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "library_booking",
     joinColumns = @JoinColumn(name = "library_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "booking_id", referencedColumnName = "id")
 )
 	private List<Booking> booking = new ArrayList<Booking>();
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
     private List<MembershipCard> membershipCards = new ArrayList<MembershipCard>();
 	
 }

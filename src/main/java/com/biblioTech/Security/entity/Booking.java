@@ -48,13 +48,13 @@ public class Booking {
     )
     private Set<Book> books = new HashSet<Book>();
 	
-	@Column(name = "start_date", nullable = false)
+	@Column(name = "start_date")
 	private LocalDate startDate;
 	
-	@Column(name = "end_date", nullable = false)
+	@Column(name = "end_date")
 	private LocalDate endDate;
 
-	@Column(name = "restitution_date", nullable = false)
+	@Column(name = "restitution_date")
 	private LocalDate restitutionDate;
 	
 	@Column(nullable = false)
