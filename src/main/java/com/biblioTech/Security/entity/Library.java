@@ -45,7 +45,7 @@ public class Library {
 	private String name;
 	
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private Address address;
 	
 	@Column (unique=true, nullable = false)

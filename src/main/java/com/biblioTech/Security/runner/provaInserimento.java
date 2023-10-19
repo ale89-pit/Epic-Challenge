@@ -22,6 +22,8 @@ import com.biblioTech.Security.entity.Municipality;
 import com.biblioTech.Security.entity.Province;
 import com.biblioTech.Security.entity.Role;
 import com.biblioTech.Security.entity.User;
+import com.biblioTech.Security.payload.AddressDto;
+import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.AddressRepository;
 import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.BookingRepository;
@@ -49,7 +51,7 @@ public class provaInserimento implements ApplicationRunner{
 	@Autowired BookingRepository bookingRepository;
 	@Autowired BookRepository bookRepository;
 
-	
+
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		// TODO Auto-generated method stub
@@ -102,6 +104,9 @@ public class provaInserimento implements ApplicationRunner{
 		
 		// Library
 		
+		LibraryDto lDto = new LibraryDto("Prova2",new AddressDto("via delle due","123",2345L),"email","pass","telefono");
+		
+		libService.saveLibrary(lDto);
 		Library lib = new Library();
 		lib.setName("Nome biblioteca");
 		lib.setAddress(addressRepository.findById(1L).get());

@@ -39,10 +39,10 @@ public class Address {
 	
 	public String description;
 	
-	@Column(nullable = false)
+	
 	public String lat;
 	
-	@Column(nullable = false)
+	
 	public String lon;
 	
 }
