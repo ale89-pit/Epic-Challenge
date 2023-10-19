@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.biblioTech.Security.entity.Book;
+import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.exception.MyAPIException;
 import com.biblioTech.Security.repository.BookRepository;
 
@@ -18,7 +19,14 @@ import jakarta.persistence.EntityExistsException;
 		@Autowired BookRepository  bookRepository;
 		
 		public Book saveBook(Book b) {
-			return bookRepository.save(b);
+			if(bookRepository.existsById(b.getIsbn())){
+		          throw new EntityExistsException("This book alredy exists");
+		        }
+			else {
+				return bookRepository.save(b);
+			}
+		   
+			
 		}
 		
 	    public Book updateBook(String id,Book b) {
