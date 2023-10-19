@@ -108,12 +108,12 @@ public class provaInserimento implements ApplicationRunner{
 		
 		libService.saveLibrary(lDto);
 		Library lib = new Library();
-		lib.setName("Nome biblioteca");
-		lib.setAddress(addressRepository.findById(1L).get());
-		
-		lib.setEmail("email@example.com");
-		lib.setPassword("password");
-		lib.setPhone("123-456-7890");
+//		lib.setName("Nome biblioteca");
+//		lib.setAddress(addressRepository.findById(1L).get());
+//		
+//		lib.setEmail("email@example.com");
+//		lib.setPassword("password");
+//		lib.setPhone("123-456-7890");
 //		libraryRepository.save(lib);
 		
 		Library l = libraryRepository.findById(1L).get();

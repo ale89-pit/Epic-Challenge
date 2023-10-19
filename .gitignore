@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 .metadata
 ../.metadata
-!**/src/logs
+!/logs
 
 ### STS ###
 .apt_generated
