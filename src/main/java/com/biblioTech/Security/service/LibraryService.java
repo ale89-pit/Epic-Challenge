@@ -25,17 +25,19 @@ import jakarta.persistence.EntityExistsException;
 		
 		public Library saveLibrary(LibraryDto l) {
 			Library lib = new Library();
-			lib.setName(l.getName());
 			Address a = new Address();
-			a.setNumber(l.getAddress().getStreetNumber());
+			Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
+
+			a.setMunicipality(m);
 			a.setStreet(l.getAddress().getStreet());
+			a.setNumber(l.getAddress().getStreetNumber());
+
+			lib.setName(l.getName());
 			lib.setEmail(l.getEmail());
 			lib.setPassword(l.getPassword());
 			lib.setPhone(l.getPhone());
-			Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
-			a.setMunicipality(m);
 			lib.setAddress(a);
-			
+
 			return libraryRepository.save(lib);
 		}
 		

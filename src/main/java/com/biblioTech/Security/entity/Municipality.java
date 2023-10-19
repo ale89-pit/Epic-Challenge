@@ -35,6 +35,6 @@ public class Municipality {
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name ="province")
-    private Province provincename;
+    private Province province;
 
 }

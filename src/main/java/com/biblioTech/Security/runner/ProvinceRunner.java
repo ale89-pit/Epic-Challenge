@@ -62,7 +62,7 @@ public class ProvinceRunner implements ApplicationRunner{
 		    String[] values = line.split(";");
 		     Municipality m = new Municipality();  			     
 		     m.setName(values[2]);
-		     m.setProvincename(provinceDAO.findByName(values[3]));
+		     m.setProvince(provinceDAO.findByName(values[3]));
 		     m.setProvince_id(values[0]);
 		     m.setMunicipality_id(values[1]);  			    
 		     municipalityDAO.save(m);
