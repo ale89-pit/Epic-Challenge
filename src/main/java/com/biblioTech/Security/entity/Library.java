@@ -1,5 +1,6 @@
 package com.biblioTech.Security.entity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -57,21 +59,21 @@ public class Library {
 	private String phone;
 //	
 	
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "library_books", joinColumns = @JoinColumn(name = "library_id"))
     @MapKeyJoinColumn(name = "isbn")
     @Column(name = "quantity")
 	private Map<Book, Integer> booklist = new HashMap<Book,Integer>();
 //	
-	@ManyToMany
+	@OneToMany
 	@JoinTable(name = "library_booking",
     joinColumns = @JoinColumn(name = "library_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "booking_id", referencedColumnName = "id")
 )
-	private List<Booking> booking;
+	private List<Booking> booking = new ArrayList<Booking>();
 	
 	@OneToMany
-    private List<MembershipCard> membershipCards;
+    private List<MembershipCard> membershipCards = new ArrayList<MembershipCard>();
 	
 }
 

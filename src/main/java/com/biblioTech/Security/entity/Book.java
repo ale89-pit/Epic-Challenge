@@ -24,9 +24,9 @@ import lombok.NoArgsConstructor;
 public class Book {
 	
 	@Id
-	@Column(length = 13)
+	@Column(length = 13, nullable = false)
     @Size(min = 10, max = 13)
-	private Long isbn;
+	private String isbn;
 	
 	@Column(nullable = false)
 	private String title;

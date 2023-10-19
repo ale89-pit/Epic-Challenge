@@ -21,23 +21,23 @@ import jakarta.persistence.EntityExistsException;
 			return bookRepository.save(b);
 		}
 		
-	    public Book updateBook(long id,Book b) {
+	    public Book updateBook(String id,Book b) {
 	        if(!bookRepository.existsById(id)){
 	          throw new EntityExistsException("This book does not exists");
 	        }
 	        Book book = bookRepository.findById(id).get();
 	        return bookRepository.save(book);
 	    }
-	      public Book getBook(long id) {
-	          return bookRepository.findById(id).get();
+	      public Book getBook(String string) {
+	          return bookRepository.findById(string).get();
 	      }
 	      
-	      public List<Book> getAllBooks(long id) {
+	      public List<Book> getAllBooks() {
 	          return bookRepository.findAll();
 	      }
 	      
 	      
-	      public String deleteBook(Long id) {
+	      public String deleteBook(String id) {
 	  		if (!bookRepository.existsById(id)) {
 	  			throw new MyAPIException(HttpStatus.NOT_FOUND, "This book does not exits");
 	  		}

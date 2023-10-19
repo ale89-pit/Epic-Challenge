@@ -1,7 +1,7 @@
 package com.biblioTech.Security.entity;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import com.biblioTech.Enum.State;
@@ -15,8 +15,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,8 +39,14 @@ public class Booking {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private MembershipCard card;
 	
-//	@Column(nullable = false)
-//	private Set<Book> booklist;
+
+    @ManyToMany
+    @JoinTable(
+        name = "booking_book",  
+        joinColumns = @JoinColumn(name = "booking_id"), 
+        inverseJoinColumns = @JoinColumn(name = "book_isbn") 
+    )
+    private Set<Book> books = new HashSet<Book>();
 	
 	@Column(name = "start_date", nullable = false)
 	private LocalDate startDate;
@@ -56,5 +63,6 @@ public class Booking {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private State state;
+
 }
 

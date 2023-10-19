@@ -1,6 +1,7 @@
 package com.biblioTech.Security.entity;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.annotation.Generated;
@@ -10,6 +11,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,5 +37,6 @@ public class MembershipCard {
 	@Column(nullable = false)
 	private Boolean blacklist;
 	
-//	private List<Booking> booking;
+	@OneToMany(mappedBy = "card")
+	private List<Booking> bookings = new ArrayList<Booking>();
 }
