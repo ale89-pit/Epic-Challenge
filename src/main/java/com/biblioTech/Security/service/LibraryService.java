@@ -6,9 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.biblioTech.Security.entity.Address;
 import com.biblioTech.Security.entity.Library;
+import com.biblioTech.Security.entity.Municipality;
 import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.LibraryRepository;
+import com.biblioTech.Security.repository.MunicipalityRepository;
 
 import jakarta.persistence.EntityExistsException;
 
@@ -17,9 +21,20 @@ import jakarta.persistence.EntityExistsException;
 	public class LibraryService {
 
 		@Autowired LibraryRepository  libraryRepository;
+		@Autowired MunicipalityRepository municipalityRepository;
 		
-		public Library saveLibrary(Library l) {
-			return libraryRepository.save(l);
+		public Library saveLibrary(LibraryDto l) {
+			Library lib = new Library();
+			lib.setEmail(l.getEmail());
+			lib.setName(l.getName());
+			Address a = new Address();
+			a.setNumber(l.getAddress().getStreetNumber());
+			a.setStreet(l.getAddress().getStreet());
+			Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
+			lib.setAddress(a);
+			lib.setPassword(l.getPassword());
+			
+			return libraryRepository.save(lib);
 		}
 		
 	    public Library updateLibrary(long id,Library l) {

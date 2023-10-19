@@ -8,4 +8,5 @@ import com.biblioTech.Security.entity.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, String>{
 
+	
 }

@@ -37,6 +37,6 @@ public class MembershipCard {
 	@Column(nullable = false)
 	private Boolean blacklist;
 	
-	@OneToMany(mappedBy = "card")
-	private List<Booking> bookings = new ArrayList<Booking>();
+//	@OneToMany(mappedBy = "card",fetch = FetchType.EAGER)
+//	private List<Booking> bookings = new ArrayList<Booking>();
 }

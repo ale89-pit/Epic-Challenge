@@ -7,6 +7,7 @@ import org.hibernate.type.descriptor.java.LocalDateJavaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.biblioTech.Enum.Category;
@@ -34,6 +35,7 @@ import com.biblioTech.Security.service.BookService;
 import com.biblioTech.Security.service.LibraryService;
 
 @Component
+@Order(3)
 public class provaInserimento implements ApplicationRunner{
 	
 	@Autowired AddressRepository addressRepository;
@@ -55,8 +57,9 @@ public class provaInserimento implements ApplicationRunner{
 		
 		// Address
 		
-		Province p = provinceRepository.findByName("ROMA");
-		Municipality m = municipalityRepository.findByProvincename(p).get(0);
+		Province p = provinceRepository.findByName("Roma");
+		Municipality m = municipalityRepository.findByProvincename(p).get(2);
+		System.out.println(m);
 		Address a = new Address();
 		a.setStreet("Via le dita dal naso");
 		a.setNumber("12");
@@ -65,7 +68,7 @@ public class provaInserimento implements ApplicationRunner{
 		a.setLat("0000003e");
 		a.setKm("123.000");
 		
-		addressRepository.save(a);
+//		addressRepository.save(a);
 		
 		
 		//Books
@@ -93,8 +96,8 @@ public class provaInserimento implements ApplicationRunner{
 		book2.setShelf("32");
 
 		
-		bookService.saveBook(book1);
-		bookService.saveBook(book2);
+//		bookService.saveBook(book1);
+//		bookService.saveBook(book2);
 		
 		
 		// Library
@@ -106,13 +109,13 @@ public class provaInserimento implements ApplicationRunner{
 		lib.setEmail("email@example.com");
 		lib.setPassword("password");
 		lib.setPhone("123-456-7890");
-		libraryRepository.save(lib);
+//		libraryRepository.save(lib);
 		
 		Library l = libraryRepository.findById(1L).get();
 		l.getBooklist().put(bookService.getBook(book1.getIsbn()), 0);
 		l.getBooklist().put(bookService.getBook(book2.getIsbn()), 3);
 		
-		libraryRepository.save(l);
+//		libraryRepository.save(l);
 
 		
 		User u = new User();
@@ -122,23 +125,29 @@ public class provaInserimento implements ApplicationRunner{
 		u.setPassword("password");
 		u.setUsername("username");
 	
-		userRepository.save(u);
+//		userRepository.save(u);
 		
 		MembershipCard c = new MembershipCard();
 		c.setUser(userRepository.findAll().get(0));
 		c.setBlacklist(false);
 		c.setId("Carta1");
-		c.setLibrary(l);
-		l.getMembershipCards().add(membershipCardRepository.findAll().get(0));
-		libraryRepository.save(l);
+		c.setLibrary(libraryRepository.findById(l.getId()).get());
 		
-	membershipCardRepository.save(c);
-	
+//		membershipCardRepository.save(c);
+
+//	
 		 Booking b = new Booking();
-b.getBooks().add(bookRepository.findById("0000000000012").get());
-b.setCard(membershipCardRepository.findAll().get(0));
-b.setState(State.PENDING);
-		bookingRepository.save(b);
+		b.getBooks().add(bookRepository.findById("0000000000012").get());
+		b.setCard(membershipCardRepository.findAll().get(0));
+		b.setState(State.PENDING);
+		
+//		bookingRepository.save(b);
+//		System.out.println(bookingRepository.findAll().get(0));
+//		l.getBooking().add(bookingRepository.findAll().get(0));
+		System.out.println(l);
+		System.out.println(bookingRepository.findById(1l).get());
+		System.out.println(bookingRepository.findBookingsByLibraryId(1l));
+//		libraryRepository.save(l);
 		}
 
 	}

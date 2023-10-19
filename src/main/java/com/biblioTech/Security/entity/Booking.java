@@ -40,7 +40,7 @@ public class Booking {
 	private MembershipCard card;
 	
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "booking_book",  
         joinColumns = @JoinColumn(name = "booking_id"), 
