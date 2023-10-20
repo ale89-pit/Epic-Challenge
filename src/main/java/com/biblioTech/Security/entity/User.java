@@ -38,6 +38,9 @@ public class User {
 
     @OneToOne
 	private Address address;
+    
+    @Column(name ="active")
+    private Boolean isActive = false;
 	
     
     

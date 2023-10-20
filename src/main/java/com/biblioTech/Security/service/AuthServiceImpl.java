@@ -1,9 +1,15 @@
 package com.biblioTech.Security.service;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -12,11 +18,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.biblioTech.Enum.ERole;
+import com.biblioTech.Security.entity.ConfirmationToken;
 import com.biblioTech.Security.entity.Role;
 import com.biblioTech.Security.entity.User;
 import com.biblioTech.Security.exception.MyAPIException;
 import com.biblioTech.Security.payload.LoginDto;
 import com.biblioTech.Security.payload.RegisterDto;
+import com.biblioTech.Security.repository.ConfirmationTokenRepository;
 import com.biblioTech.Security.repository.RoleRepository;
 import com.biblioTech.Security.repository.UserRepository;
 import com.biblioTech.Security.security.JwtTokenProvider;
@@ -31,6 +39,9 @@ public class AuthServiceImpl implements AuthService {
     private RoleRepository roleRepository;
     private PasswordEncoder passwordEncoder;
     private JwtTokenProvider jwtTokenProvider;
+
+    @Autowired private ConfirmationTokenRepository confirmationTokenRepository;
+    @Autowired private EmailService emailService;
 
 
     public AuthServiceImpl(AuthenticationManager authenticationManager,
@@ -95,9 +106,43 @@ public class AuthServiceImpl implements AuthService {
         user.setRoles(roles);
         System.out.println(user);
         userRepository.save(user);
+        ConfirmationToken confirmationToken = new ConfirmationToken(user);
 
-        return "User registered successfully!.";
+        confirmationTokenRepository.save(confirmationToken);
+        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        mailMessage.setTo(user.getEmail());
+        mailMessage.setSubject("Complete Registration! This Email is valid to 24 Hours");
+        mailMessage.setText("To confirm your account, please click here : "
+                +"http://localhost:8080/api/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+        emailService.sendEmail(mailMessage);
+
+        System.out.println("Confirmation Token: " + confirmationToken.getConfirmationToken());
+        
+        return "Check your email to confirm.";
     }
+    @Override
+	public ResponseEntity<?> confirmEmail(String confirmationToken) {
+		ConfirmationToken token = confirmationTokenRepository.findByConfirmationToken(confirmationToken);
+		 if (token != null) {
+		        Date dataAttuale = new Date();
+		        Calendar cal = Calendar.getInstance();
+		        cal.setTime(token.getCreatedDate());
+		        cal.add(Calendar.HOUR, 24); // Aggiungi 1 minuto alla data di creazione
+		        System.out.println(cal);
+		        if (cal.getTime().after(dataAttuale)) {
+		            Optional<User> user = userRepository.findByEmail(token.getUser().getEmail());
+
+		            if (user.isPresent()) {
+		                User userPresent = user.get();
+		                userPresent.setIsActive(true);;
+		                userRepository.save(userPresent);
+		                return ResponseEntity.ok("Email verified successfully!");
+		            }
+		        }
+		    }
+		    
+		    return ResponseEntity.badRequest().body("Error: Couldn't verify email");
+		}
     
     public ERole getRole(String role) {
     	if(role.equals("ADMIN")) return ERole.ROLE_ADMIN;
