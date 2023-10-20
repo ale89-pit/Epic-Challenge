@@ -46,5 +46,6 @@ public enum Category {
 	    MEDICAL,
 	    FINANCIAL,
 	    SCIENCE_AND_NATURE,
-	    BUSINESS_AND_ECONOMICS
+	    BUSINESS_AND_ECONOMICS,
+	    UNKNOWN
 }

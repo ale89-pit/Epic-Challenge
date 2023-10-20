@@ -19,14 +19,12 @@ import jakarta.persistence.EntityExistsException;
 		@Autowired BookRepository  bookRepository;
 		
 		public Book saveBook(Book b) {
-			if(bookRepository.existsById(b.getIsbn())){
-		          throw new EntityExistsException("This book alredy exists");
+			if(!bookRepository.existsById(b.getIsbn())){
+				return bookRepository.save(b);
 		        }
 			else {
-				return bookRepository.save(b);
+				return bookRepository.findById(b.getIsbn()).get();
 			}
-		   
-			
 		}
 		
 	    public Book updateBook(String id,Book b) {
