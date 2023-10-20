@@ -47,7 +47,7 @@ public class MembershipCard {
 	}
 
 	public void setId() {
-		this.id = library + "." + user.getFullname() + "." + date.toString();
+		this.id = library.getName() + "." + user.getFullname() + "." + date.toString();
 	}
 
 	public void setLibrary(Library library) {
