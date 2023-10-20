@@ -65,7 +65,7 @@ public class MembershipCardService {
 	}
 
 	public List<MembershipCard> getMembershipCardsByLibraryAndState(Library l, MembershipCardState s) {
-		return membershipCardRepository.findByLibraryAndMembershipCardState(l, s);
+		return membershipCardRepository.findByLibraryAndState(l, s);
 	}
 
 	public List<MembershipCard> getAllMembershipCards() {

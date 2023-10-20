@@ -20,6 +20,6 @@ public interface MembershipCardRepository extends JpaRepository<MembershipCard, 
 
 	Boolean existsByUserAndLibrary(User u, Library l);
 
-	List<MembershipCard> findByLibraryAndMembershipCardState(Library l, MembershipCardState s);
+	List<MembershipCard> findByLibraryAndState(Library l, MembershipCardState s);
 
 }
