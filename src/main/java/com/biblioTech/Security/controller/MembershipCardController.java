@@ -8,9 +8,10 @@ import com.biblioTech.Security.service.MembershipCardService;
 
 @Controller
 public class MembershipCardController {
-	
-	@Autowired MembershipCardService membershipCardService;
-	
+
+	@Autowired
+	MembershipCardService membershipCardService;
+
 	public MembershipCard save(MembershipCard c) {
 		return membershipCardService.saveMembershipCard(c);
 	}
