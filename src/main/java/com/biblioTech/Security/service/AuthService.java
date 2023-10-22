@@ -6,9 +6,15 @@ import com.biblioTech.Security.payload.LoginDto;
 import com.biblioTech.Security.payload.RegisterDto;
 
 public interface AuthService {
-    
+
 	String login(LoginDto loginDto);
-    String register(RegisterDto registerDto);
-    ResponseEntity<?> confirmEmail(String confirmationToken);
-    
+
+	String register(RegisterDto registerDto);
+
+	String registerLibrary(RegisterDto registerDto);
+
+	ResponseEntity<?> confirmEmail(String confirmationToken);
+
+	ResponseEntity<?> confirmEmailByLibrary(String confirmationToken);
+
 }

@@ -23,29 +23,35 @@ import lombok.NoArgsConstructor;
 @Data
 public class ConfirmationToken {
 
-	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="token_id")
-    private Long tokenId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "token_id")
+	private Long tokenId;
 
-    @Column(name="confirmation_token")
-    private String confirmationToken;
+	@Column(name = "confirmation_token")
+	private String confirmationToken;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdDate;
-    //add no args and all args constructer and getter/setter
-    
-    @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "user_id")
-    private User user;
-    
-    
-    
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createdDate;
+	// add no args and all args constructer and getter/setter
 
-    public ConfirmationToken(User user) {
-        this.user = user;
-        createdDate = new Date();
-        confirmationToken = UUID.randomUUID().toString();
-    }
+	@OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@OneToOne(targetEntity = Library.class, fetch = FetchType.EAGER)
+	@JoinColumn(name = "library_id")
+	private Library library;
+
+	public ConfirmationToken(User user) {
+		this.user = user;
+		createdDate = new Date();
+		confirmationToken = UUID.randomUUID().toString();
+	}
+
+	public ConfirmationToken(Library library) {
+		this.library = library;
+		createdDate = new Date();
+		confirmationToken = UUID.randomUUID().toString();
+	}
 }
