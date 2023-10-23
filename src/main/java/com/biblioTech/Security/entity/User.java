@@ -45,6 +45,10 @@ public class User {
 	private String password;
 
 	@OneToOne
+	@Column
+	private Long phone;
+
+	@OneToOne
 	private Address address;
 
 	@Column(name = "active")

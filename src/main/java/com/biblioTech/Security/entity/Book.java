@@ -45,13 +45,7 @@ public class Book {
 	
 	@Enumerated(EnumType.STRING)
 	public Languages language;
-	
-	public String shelf;
-	
-	public String col;
-	
-	
-	
+
 	
 }
 
