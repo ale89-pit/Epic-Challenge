@@ -1,24 +1,25 @@
 package com.biblioTech.Security.service;
 
-<<<<<<< Updated upstream
-=======
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
->>>>>>> Stashed changes
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.biblioTech.Enum.Category;
+import com.biblioTech.Enum.Languages;
 import com.biblioTech.Security.entity.Address;
+import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.entity.Municipality;
 import com.biblioTech.Security.exception.MyAPIException;
 import com.biblioTech.Security.payload.LibraryDto;
+import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 
@@ -34,20 +35,10 @@ public class LibraryService {
 	@Autowired
 	BookRepository bookRepository;
 
-<<<<<<< Updated upstream
-		@Autowired LibraryRepository  libraryRepository;
-		@Autowired MunicipalityRepository municipalityRepository;
-		
-		public Library saveLibrary(LibraryDto l) {
-			Library lib = new Library();
-			Address a = new Address();
-			Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
-=======
 	public Library saveLibrary(LibraryDto l) {
 		Library lib = new Library();
 		Address a = new Address();
 		Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
->>>>>>> Stashed changes
 
 		a.setMunicipality(m);
 		a.setStreet(l.getAddress().getStreet());
@@ -59,18 +50,6 @@ public class LibraryService {
 		lib.setPhone(l.getPhone());
 		lib.setAddress(a);
 
-<<<<<<< Updated upstream
-			return libraryRepository.save(lib);
-		}
-		
-	    public Library updateLibrary(long id,Library l) {
-	        if(!libraryRepository.existsById(id)){
-	          throw new EntityExistsException("This library does not exists");
-	        }
-	        Library library = libraryRepository.findById(id).get();
-	        return libraryRepository.save(library);
-	    }
-=======
 		return libraryRepository.save(lib);
 	}
 
@@ -132,7 +111,6 @@ public class LibraryService {
 						b.setLanguage(Languages.ITALIAN);
 						System.out.println("Lingua non valida: " + values[6]);
 					}
->>>>>>> Stashed changes
 
 				}
 
@@ -146,7 +124,7 @@ public class LibraryService {
 			brList.close();
 
 		} catch (IOException e) {
-
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 
 		}
