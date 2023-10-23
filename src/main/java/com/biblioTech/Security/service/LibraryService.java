@@ -144,7 +144,8 @@ import jakarta.persistence.EntityExistsException;
 	        Library library = libraryRepository.findById(id).get();
 	        return libraryRepository.save(library);
 	    }
-	      public Library getLibrary(long id) {
+
+		public Library getLibraryById(long id) {
 	          return libraryRepository.findById(id).get();
 	      }
 	      

@@ -1,42 +1,73 @@
 package com.biblioTech.Security.entity;
 
+import java.time.LocalDate;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.biblioTech.Enum.MembershipCardState;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name= "membership_card")
+@Table(name = "membership_card")
 @NoArgsConstructor
-@AllArgsConstructor
-@Data
-
+@Getter
 public class MembershipCard {
-	
+
 	@Id
 	private String id;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Library library;
-	
-	@ManyToOne(fetch = FetchType.EAGER)	
+
+	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
-	
+
 	@Column(nullable = false)
 	private Boolean blacklist;
-	
-//	@OneToMany(mappedBy = "card",fetch = FetchType.EAGER)
-//	private List<Booking> bookings = new ArrayList<Booking>();
+
+	@Column(nullable = false)
+	private MembershipCardState state;
+
+	@Column(nullable = false)
+	private LocalDate date;
+
+	public MembershipCard(Library library, User user, Boolean blacklist, MembershipCardState state, LocalDate date) {
+		this.library = library;
+		this.user = user;
+		this.blacklist = blacklist;
+		this.state = state;
+		this.date = date;
+		setId();
+	}
+
+	public void setId() {
+		this.id = library.getName() + "." + user.getFullname() + "." + date.toString();
+	}
+
+	public void setLibrary(Library library) {
+		this.library = library;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setBlacklist(Boolean blacklist) {
+		this.blacklist = blacklist;
+	}
+
+	public void setState(MembershipCardState state) {
+		this.state = state;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
 }
