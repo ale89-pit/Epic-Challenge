@@ -24,6 +24,7 @@ import jakarta.persistence.EntityExistsException;
 		public Booking saveBooking(Booking b) {
 			return bookingRepository.save(b);
 		}
+<<<<<<< Updated upstream
 		
 	    public Booking updateBooking(long id,Booking b) {
 	        if(!bookingRepository.existsById(id)){
@@ -49,6 +50,11 @@ import jakarta.persistence.EntityExistsException;
 	  		
 	  		return "This booking has been deleted";
 	  	}
+=======
+		// TODO: update book in base a campi del Bookdto
+		Booking booking = bookingRepository.findById(id).get();
+		return bookingRepository.save(booking);
+>>>>>>> Stashed changes
 	}
 
 

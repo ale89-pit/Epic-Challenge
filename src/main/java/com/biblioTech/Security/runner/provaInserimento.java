@@ -1,27 +1,12 @@
 package com.biblioTech.Security.runner;
 
-import java.time.LocalDate;
-import java.util.Date;
-
-import org.hibernate.type.descriptor.java.LocalDateJavaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import com.biblioTech.Enum.Category;
-import com.biblioTech.Enum.Languages;
-import com.biblioTech.Enum.State;
-import com.biblioTech.Security.entity.Address;
-import com.biblioTech.Security.entity.Book;
-import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.entity.Library;
-import com.biblioTech.Security.entity.MembershipCard;
-import com.biblioTech.Security.entity.Municipality;
-import com.biblioTech.Security.entity.Province;
-import com.biblioTech.Security.entity.Role;
-import com.biblioTech.Security.entity.User;
 import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.AddressRepository;
@@ -31,7 +16,6 @@ import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MembershipCardRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 import com.biblioTech.Security.repository.ProvinceRepository;
-import com.biblioTech.Security.repository.RoleRepository;
 import com.biblioTech.Security.repository.UserRepository;
 import com.biblioTech.Security.service.BookService;
 import com.biblioTech.Security.service.LibraryService;
@@ -54,6 +38,7 @@ public class provaInserimento implements ApplicationRunner{
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+<<<<<<< Updated upstream
 		// TODO Auto-generated method stub
 		
 		
@@ -85,6 +70,9 @@ public class provaInserimento implements ApplicationRunner{
 		book1.setCol("lll");
 		book1.setShelf("32");
 
+=======
+		// // Address
+>>>>>>> Stashed changes
 
 		Book book2 = new Book();
 		book2.setIsbn("0000000000012");
