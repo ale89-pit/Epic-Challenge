@@ -65,15 +65,21 @@ public class Library {
 	@MapKeyJoinColumn(name = "isbn")
 	@Column(name = "quantity")
 	private Map<Book, Integer> booklist = new HashMap<Book, Integer>();
-//	
-//	@OneToMany(fetch = FetchType.EAGER)
-//	@JoinTable(name = "library_booking",
-//  joinColumns = @JoinColumn(name = "library_id", referencedColumnName = "id"),
-//  inverseJoinColumns = @JoinColumn(name = "booking_id", referencedColumnName = "id")
-//)
-//	private List<Booking> booking = new ArrayList<Booking>();
 
-//	@OneToMany(fetch = FetchType.EAGER)
-//    private List<MembershipCard> membershipCards = new ArrayList<MembershipCard>();
+	// return the previous quantity
+	public Integer addBook(Book book, Integer quantity) {
+		return this.booklist.put(book, quantity);
+	}
+
+	// return the previous quantity
+	public Integer removeBook(Book book) {
+		return this.booklist.remove(book);
+	}
+
+	// return the previous quantity
+	public Integer setBookQuantity(Book book, Integer quantity) {
+		return this.booklist.replace(book, quantity);
+
+	}
 
 }

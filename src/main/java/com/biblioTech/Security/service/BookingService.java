@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.biblioTech.Enum.State;
 import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.payload.BookingDto;
 import com.biblioTech.Security.repository.BookingRepository;
 
 import jakarta.persistence.EntityExistsException;
@@ -22,20 +24,37 @@ public class BookingService {
 		return bookingRepository.save(b);
 	}
 
-	public Booking updateBooking(long id, Booking b) {
+	public Booking updateBooking(Long id, BookingDto b) {
 
 		if (!bookingRepository.existsById(id)) {
 			throw new EntityExistsException("This booking does not exists");
 		}
 		Booking booking = bookingRepository.findById(id).get();
+
+		if (b.getCard() != null)
+			booking.setCard(b.getCard());
+		if (b.getStartDate() != null)
+			booking.setStartDate(b.getStartDate());
+		if (b.getEndDate() != null)
+			booking.setEndDate(b.getEndDate());
+		if (b.getRestitutionDate() != null)
+			booking.setRestitutionDate(b.getRestitutionDate());
+		if (b.getState() != null)
+			booking.setState(b.getState());
+		if (b.getBooks() != null)
+			booking.setBooks(b.getBooks());
+
 		return bookingRepository.save(booking);
 	}
 
-	public Booking getBooking(long id) {
+	public Booking getBooking(Long id) {
+		if (!bookingRepository.existsById(id)) {
+			throw new EntityExistsException("This booking does not exists");
+		}
 		return bookingRepository.findById(id).get();
 	}
 
-	public List<Booking> getAllBookings(long id) {
+	public List<Booking> getAllBookings() {
 		return bookingRepository.findAll();
 	}
 
@@ -48,5 +67,11 @@ public class BookingService {
 		return "This booking has been deleted";
 	}
 
-	// TODO: metodo per cambiare stato
+	public Booking setState(Long id, State state) {
+		Booking booking = bookingRepository.findById(id).get();
+		booking.setState(state);
+
+		return booking;
+	}
+
 }

@@ -30,39 +30,33 @@ import lombok.NoArgsConstructor;
 @Data
 
 public class Booking {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@JoinColumn(nullable = false)
 	@ManyToOne(fetch = FetchType.EAGER)
 	private MembershipCard card;
-	
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-        name = "booking_book",  
-        joinColumns = @JoinColumn(name = "booking_id"), 
-        inverseJoinColumns = @JoinColumn(name = "book_isbn") 
-    )
-    private Set<Book> books = new HashSet<Book>();
-	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "booking_book", joinColumns = @JoinColumn(name = "booking_id"), inverseJoinColumns = @JoinColumn(name = "book_isbn"))
+	private Set<Book> books = new HashSet<Book>();
+
 	@Column(name = "start_date")
 	private LocalDate startDate;
-	
+
 	@Column(name = "end_date")
 	private LocalDate endDate;
 
 	@Column(name = "restitution_date")
 	private LocalDate restitutionDate;
-	
+
 	@Column(nullable = false)
 	private boolean confirmed;
-	
+
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private State state;
 
 }
-
