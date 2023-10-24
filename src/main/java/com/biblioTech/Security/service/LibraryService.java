@@ -22,6 +22,7 @@ import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.entity.Municipality;
 import com.biblioTech.Security.entity.Province;
 import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.LibraryRepository;
@@ -37,7 +38,7 @@ public class LibraryService {
 	@Autowired
 	MunicipalityRepository municipalityRepository;
 	@Autowired
-	BookRepository bookRepository;
+	BookService bookService;
 
 	public Library saveLibrary(LibraryDto l) {
 		Library lib = new Library();
@@ -57,7 +58,7 @@ public class LibraryService {
 		return libraryRepository.save(lib);
 	}
 
-	public Library addLibraryBooks(long id, Library l, String filepath) {
+	public Library addLibraryBooks(long id, String filepath) {
 		String currentWorkingDir = System.getProperty("user.dir");
 		BufferedReader brList;
 		Library library = libraryRepository.findById(id).get();
@@ -119,7 +120,7 @@ public class LibraryService {
 				}
 
 				System.out.println("Libro aggiunto: " + b.getTitle() + " quantità: " + values[7]);
-				bookRepository.save(b);
+				bookService.saveBook(b);
 				// 1 rappresenta la quantità, inserire la colonna nel foglio e riprovare con la
 				// giusta quantità
 				library.getBooklist().put(b, Integer.parseInt(values[7]));
@@ -137,6 +138,22 @@ public class LibraryService {
 		return libraryRepository.save(library);
 	}
 
+	public Library addLibraryBook(long id, BookDto book, Integer quantity) {
+		Library library = libraryRepository.findById(id).get();
+		Book b = new Book();
+		b.setIsbn(book.getIsbn());
+		b.setTitle(book.getTitle());
+		b.setAuthor(book.getAuthor());
+		b.setPublisher(book.getPublisher());
+		b.setPublishedYear(book.getPublishedYear());
+		b.setCategory(book.getCategory());
+		b.setLanguage(book.getLanguage());
+		bookService.saveBook(b);
+		System.out.println(bookService.saveBook(b));
+		library.getBooklist().put(b, quantity);
+		return libraryRepository.save(library);
+	}
+	
 	public Library updateLibrary(long id, Library l) {
 		if (!libraryRepository.existsById(id)) {
 			throw new EntityExistsException("This library does not exists");
@@ -149,7 +166,7 @@ public class LibraryService {
 		return libraryRepository.findById(id).get();
 	}
 
-	public List<Library> getAllLibrarys(long id) {
+	public List<Library> getAllLibraries() {
 		return libraryRepository.findAll();
 	}
 
