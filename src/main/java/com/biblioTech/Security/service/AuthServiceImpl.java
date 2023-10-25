@@ -180,12 +180,11 @@ public class AuthServiceImpl implements AuthService {
 			if (cal.getTime().after(dataAttuale)) {
 				Optional<User> user = userRepository.findByEmail(token.getUser().getEmail());
 
-				if (user != null) {
+				if (user.isPresent()) {
 					User userPresent = user.get();
 					userPresent.setIsActive(true);
-					;
 					userRepository.save(userPresent);
-					confirmationTokenRepository.delete(token);
+//					confirmationTokenRepository.delete(token);
 					return ResponseEntity.ok("Email verified successfully!");
 
 				}
@@ -210,7 +209,7 @@ public class AuthServiceImpl implements AuthService {
 				if (library.isPresent()) {
 					Library libraryPresent = library.get();
 					libraryPresent.setIsActive(true);
-					;
+
 					libraryRepository.save(libraryPresent);
 					confirmationTokenRepository.delete(token);
 					return ResponseEntity.ok("Email verified successfully!");
