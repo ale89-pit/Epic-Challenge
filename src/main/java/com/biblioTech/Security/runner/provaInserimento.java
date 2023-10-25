@@ -23,6 +23,7 @@ import com.biblioTech.Security.repository.MunicipalityRepository;
 import com.biblioTech.Security.repository.ProvinceRepository;
 import com.biblioTech.Security.repository.UserRepository;
 import com.biblioTech.Security.service.BookService;
+import com.biblioTech.Security.service.FileDataService;
 import com.biblioTech.Security.service.LibraryService;
 
 @Component
@@ -49,6 +50,7 @@ public class provaInserimento implements ApplicationRunner {
 	BookingRepository bookingRepository;
 	@Autowired
 	BookRepository bookRepository;
+	@Autowired FileDataService fileDataService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -105,6 +107,9 @@ public class provaInserimento implements ApplicationRunner {
 				"telefono");
 		libService.saveLibrary(lDto);
 
+		LibraryDto lDto2 = new LibraryDto("Lib2", new AddressDto("via delle due2", "1232", 245L), "email2", "pass2",
+				"telefono");
+		libService.saveLibrary(lDto2);
 		// NON FUNZIONA PERCHE' IL SERVICE SI ASPETTA LIBRARY DTO E NON LIBRARY
 		// Address a = addressRepository.findById(1L).get();
 		// System.out.println(a);
@@ -156,9 +161,11 @@ public class provaInserimento implements ApplicationRunner {
 		// libraryRepository.save(l);
 		//
 //		Library l = libraryRepository.findById(1L).get();
-		libService.addLibraryBooks(1l, "/src/main/resources/Top_100_Libri.csv");
-		BookDto b = new BookDto("9788800500876", "La vera storia di Emanuele Syrbe", "Emanuele Syrbe", "Publisher", LocalDate.of(2023,10,22),Category.AUTOBIOGRAPHY, Languages.ITALIAN);
-		libService.addLibraryBook(1l, b, 30);
+		//libService.addLibraryBooks(1l, "/src/main/resources/Top_100_Libri.csv");
+		fileDataService.init();
+		
+//		BookDto b = new BookDto("9788800500876", "La vera storia di Emanuele Syrbe", "Emanuele Syrbe", "Publisher", LocalDate.of(2023,10,22),Category.AUTOBIOGRAPHY, Languages.ITALIAN);
+//		libService.addLibraryBook(1l, b, 30);
 	}
 
 }
