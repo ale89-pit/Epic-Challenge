@@ -5,12 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +17,6 @@ import com.biblioTech.Security.entity.Address;
 import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.entity.Municipality;
-import com.biblioTech.Security.entity.Province;
 import com.biblioTech.Security.exception.MyAPIException;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.BookRepository;
@@ -38,8 +34,11 @@ public class LibraryService {
 	MunicipalityRepository municipalityRepository;
 	@Autowired
 	BookRepository bookRepository;
+	@Autowired
+	AddressService addressService;
 
 	public Library saveLibrary(LibraryDto l) {
+
 		Library lib = new Library();
 		Address a = new Address();
 		Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
@@ -129,7 +128,6 @@ public class LibraryService {
 			brList.close();
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 
 		}
@@ -137,11 +135,53 @@ public class LibraryService {
 		return libraryRepository.save(library);
 	}
 
-	public Library updateLibrary(long id, Library l) {
+	public Library addBook(Long idLib, Book book, Integer quantity) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+
+		Library library = libraryRepository.findById(idLib).get();
+		library.addBook(book, quantity);
+		return libraryRepository.save(library);
+	}
+
+	public Library setBookQuantity(Long idLib, Book book, Integer quantity) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+
+		Library library = libraryRepository.findById(idLib).get();
+		library.setBookQuantity(book, quantity);
+		return libraryRepository.save(library);
+
+	}
+
+	public Library removeBook(Long idLib, Book book) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+
+		Library library = libraryRepository.findById(idLib).get();
+		library.removeBook(book);
+		return libraryRepository.save(library);
+
+	}
+
+	public Library updateLibrary(long id, LibraryDto l) {
 		if (!libraryRepository.existsById(id)) {
 			throw new EntityExistsException("This library does not exists");
 		}
 		Library library = libraryRepository.findById(id).get();
+
+		if (l.getName() != null)
+			library.setName(l.getName());
+
+		if (l.getEmail() != null)
+			library.setEmail(l.getEmail());
+
+		if (l.getAddress() != null)
+			addressService.updateAddress(library.getAddress().getId(), l.getAddress());
+
+		if (l.getPhone() != null)
+			library.setPhone(l.getPhone());
+
 		return libraryRepository.save(library);
 	}
 

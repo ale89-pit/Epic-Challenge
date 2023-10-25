@@ -66,17 +66,17 @@ public class Library {
 	@Column(name = "quantity")
 	private Map<Book, Integer> booklist = new HashMap<Book, Integer>();
 
-	// return the previous quantity
+	// return the previous quantity null if not exist
 	public Integer addBook(Book book, Integer quantity) {
 		return this.booklist.put(book, quantity);
 	}
 
-	// return the previous quantity
+	// return the previous quantity null if not exist
 	public Integer removeBook(Book book) {
 		return this.booklist.remove(book);
 	}
 
-	// return the previous quantity
+	// return the previous quantity null if not exist
 	public Integer setBookQuantity(Book book, Integer quantity) {
 		return this.booklist.replace(book, quantity);
 
