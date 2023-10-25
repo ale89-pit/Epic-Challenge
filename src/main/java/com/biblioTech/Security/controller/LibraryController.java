@@ -17,12 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
-import com.biblioTech.Security.entity.FileData;
 import com.biblioTech.Security.entity.Library;
+import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.BookDto;
-import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.FileDataRepository;
 import com.biblioTech.Security.service.FileDataService;
 import com.biblioTech.Security.service.LibraryService;
@@ -32,37 +30,40 @@ import com.biblioTech.message.ResponseMessage;
 @RestController
 @RequestMapping("/library")
 public class LibraryController {
-	@Autowired LibraryService libraryService;
-	@Autowired FileDataService fileDataService;
-	@Autowired FileDataRepository fileDataRepository;
-	
+	@Autowired
+	LibraryService libraryService;
+	@Autowired
+	FileDataService fileDataService;
+	@Autowired
+	FileDataRepository fileDataRepository;
+
 	@GetMapping("/all")
-	public ResponseEntity<?> allLibraries(){
+	public ResponseEntity<?> allLibraries() {
 		return ResponseEntity.ok(libraryService.getAllLibraries());
 	}
-	
+
 	@GetMapping("/{library_id}")
-	public ResponseEntity<?> libraryById(@PathVariable Long library_id){
+	public ResponseEntity<?> libraryById(@PathVariable Long library_id) {
 		return ResponseEntity.ok(libraryService.getLibraryById(library_id));
 	}
-	
-	//TODO Serve?!
-	@PostMapping("/add")
+
+	// TODO Serve?!
+	@PutMapping("/add/{library_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> saveLibrary(@RequestBody LibraryDto library){
-		return ResponseEntity.ok(libraryService.saveLibrary(library));
+	public ResponseEntity<?> addAddressToLibrary(@PathVariable long library_id, @RequestBody AddressDto address) {
+		return ResponseEntity.ok(libraryService.addAddressToLibrary(library_id, address));
 	}
-	
+
 	@PutMapping("/{library_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> editLibrary(@PathVariable Long library_id, @RequestBody Library library){
+	public ResponseEntity<?> editLibrary(@PathVariable Long library_id, @RequestBody Library library) {
 		return ResponseEntity.ok(libraryService.updateLibrary(library_id, library));
 	}
-	
-	//TODO correggere il metodo 
+
+	// TODO correggere il metodo
 	@PostMapping("/addBooks/{library_id}")
 //	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> addBooks(@PathVariable Long library_id, @RequestParam("file") MultipartFile file){
+	public ResponseEntity<?> addBooks(@PathVariable Long library_id, @RequestParam("file") MultipartFile file) {
 		String message = "";
 		try {
 //	    	salvo il csv in resources
@@ -80,11 +81,10 @@ public class LibraryController {
 //
 //			f.setFilePath(url);
 //			FileData saved = fileDataRepository.save(f);
-			
+
 			libraryService.addLibraryBooks(library_id, file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + file.getOriginalFilename();
-			return ResponseEntity.status(HttpStatus.OK)
-					.body(new ResponseMessage(message + file.getOriginalFilename()));
+			return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message + file.getOriginalFilename()));
 		} catch (Exception e) {
 			message = "Could not upload the file: " + file.getOriginalFilename() + ". Error: " + e.getMessage();
 			e.printStackTrace();
@@ -92,26 +92,26 @@ public class LibraryController {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
 		}
 	}
-	
 
 	@GetMapping("/csv/{filename}")
 	@ResponseBody
 	public ResponseEntity<Resource> getFile(@PathVariable String filename) {
-		Resource fileCsv= fileDataService.load(filename);
+		Resource fileCsv = fileDataService.load(filename);
 		return ResponseEntity.ok(fileDataService.load(filename));
 	}
-	
+
 	@PostMapping("/addBook/{library_id}/{quantity}")
 //	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> addBook(@PathVariable Long library_id, @PathVariable Integer quantity, @RequestBody BookDto book){
+	public ResponseEntity<?> addBook(@PathVariable Long library_id, @PathVariable Integer quantity,
+			@RequestBody BookDto book) {
 		return ResponseEntity.ok(libraryService.addLibraryBook(library_id, book, quantity));
 	}
-	
-	//TODO rimuovere moderator?
+
+	// TODO rimuovere moderator?
 	@DeleteMapping("/{library_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> deleteLibrary(@PathVariable Long library_id){
+	public ResponseEntity<?> deleteLibrary(@PathVariable Long library_id) {
 		return ResponseEntity.ok(libraryService.deleteLibrary(library_id));
 	}
-	
+
 }
