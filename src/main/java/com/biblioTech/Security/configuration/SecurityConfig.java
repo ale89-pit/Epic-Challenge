@@ -65,6 +65,7 @@ public class SecurityConfig {
         .authorizeHttpRequests((authorize) -> authorize
         		.requestMatchers(mvc.pattern(HttpMethod.GET, "/api/**")).permitAll()
                 .requestMatchers(mvc.pattern("/api/auth/**")).permitAll()
+                .requestMatchers(mvc.pattern("/library/**")).permitAll()
                 .anyRequest().authenticated())
         .exceptionHandling( exception -> exception
                 .authenticationEntryPoint(authenticationEntryPoint)

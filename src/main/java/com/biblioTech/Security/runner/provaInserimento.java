@@ -1,9 +1,7 @@
 package com.biblioTech.Security.runner;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-import org.hibernate.type.descriptor.java.LocalDateJavaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -12,17 +10,9 @@ import org.springframework.stereotype.Component;
 
 import com.biblioTech.Enum.Category;
 import com.biblioTech.Enum.Languages;
-import com.biblioTech.Enum.State;
-import com.biblioTech.Security.entity.Address;
-import com.biblioTech.Security.entity.Book;
-import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.entity.Library;
-import com.biblioTech.Security.entity.MembershipCard;
-import com.biblioTech.Security.entity.Municipality;
-import com.biblioTech.Security.entity.Province;
-import com.biblioTech.Security.entity.Role;
-import com.biblioTech.Security.entity.User;
 import com.biblioTech.Security.payload.AddressDto;
+import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.AddressRepository;
 import com.biblioTech.Security.repository.BookRepository;
@@ -31,9 +21,9 @@ import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MembershipCardRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 import com.biblioTech.Security.repository.ProvinceRepository;
-import com.biblioTech.Security.repository.RoleRepository;
 import com.biblioTech.Security.repository.UserRepository;
 import com.biblioTech.Security.service.BookService;
+import com.biblioTech.Security.service.FileDataService;
 import com.biblioTech.Security.service.LibraryService;
 
 @Component
@@ -52,7 +42,6 @@ public class provaInserimento implements ApplicationRunner {
 	LibraryService libService;
 	@Autowired
 	BookService bookService;
-
 	@Autowired
 	UserRepository userRepository;
 	@Autowired
@@ -61,10 +50,11 @@ public class provaInserimento implements ApplicationRunner {
 	BookingRepository bookingRepository;
 	@Autowired
 	BookRepository bookRepository;
+	@Autowired FileDataService fileDataService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		// TODO Auto-generated method stub
+
 
 		// // Address
 
@@ -117,6 +107,9 @@ public class provaInserimento implements ApplicationRunner {
 				"telefono");
 		libService.saveLibrary(lDto);
 
+		LibraryDto lDto2 = new LibraryDto("Lib2", new AddressDto("via delle due2", "1232", 245L), "email2", "pass2",
+				"telefono");
+		libService.saveLibrary(lDto2);
 		// NON FUNZIONA PERCHE' IL SERVICE SI ASPETTA LIBRARY DTO E NON LIBRARY
 		// Address a = addressRepository.findById(1L).get();
 		// System.out.println(a);
@@ -167,8 +160,12 @@ public class provaInserimento implements ApplicationRunner {
 		// System.out.println(bookingRepository.findBookingsByLibraryId(1l));
 		// libraryRepository.save(l);
 		//
-		Library l = libraryRepository.findById(1L).get();
-		libService.addLibraryBooks(1l, l, "/src/main/resources/Top_100_Libri.csv");
+//		Library l = libraryRepository.findById(1L).get();
+		//libService.addLibraryBooks(1l, "/src/main/resources/Top_100_Libri.csv");
+		fileDataService.init();
+		
+//		BookDto b = new BookDto("9788800500876", "La vera storia di Emanuele Syrbe", "Emanuele Syrbe", "Publisher", LocalDate.of(2023,10,22),Category.AUTOBIOGRAPHY, Languages.ITALIAN);
+//		libService.addLibraryBook(1l, b, 30);
 	}
 
 }
