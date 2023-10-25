@@ -18,12 +18,16 @@ import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.entity.Municipality;
 import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 
 import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 
 @Service
 public class LibraryService {
@@ -34,8 +38,6 @@ public class LibraryService {
 	MunicipalityRepository municipalityRepository;
 	@Autowired
 	BookRepository bookRepository;
-	@Autowired
-	AddressService addressService;
 
 	public Library saveLibrary(LibraryDto l) {
 
@@ -56,21 +58,25 @@ public class LibraryService {
 		return libraryRepository.save(lib);
 	}
 
-	public Library addLibraryBooks(long id, Library l, String filepath) {
-		String currentWorkingDir = System.getProperty("user.dir");
+	@Transactional
+	public Library addLibraryBooks(long id, String filename) {
+
 		BufferedReader brList;
 		Library library = libraryRepository.findById(id).get();
+		String folder = System.getProperty("user.dir");
+		System.out.println(filename);
 		try {
-			brList = new BufferedReader(new FileReader(currentWorkingDir + filepath, StandardCharsets.UTF_8));
-			String lineProvince;
+			brList = new BufferedReader(
+					new FileReader(folder + "/src/main/resources/csvFiles/" + filename, StandardCharsets.UTF_8));
+			String lineBook;
 			boolean firstLine = true;
-			while ((lineProvince = brList.readLine()) != null) {
+			while ((lineBook = brList.readLine()) != null) {
 				if (firstLine) {
 					// Skip the first line
 					firstLine = false;
 					continue;
 				}
-				String[] values = lineProvince.split(";");
+				String[] values = lineBook.split(";");
 
 				Book b = new Book();
 				b.setIsbn(values[0]);
@@ -116,14 +122,10 @@ public class LibraryService {
 					}
 
 				}
-
 				System.out.println("Libro aggiunto: " + b.getTitle() + " quantità: " + values[7]);
-				bookRepository.save(b);
-				// 1 rappresenta la quantità, inserire la colonna nel foglio e riprovare con la
-				// giusta quantità
+				bookService.saveBook(b);
 				library.getBooklist().put(b, Integer.parseInt(values[7]));
-
-				// return libraryRepository.save(library);
+				libraryRepository.save(library);
 			}
 			brList.close();
 
@@ -131,40 +133,37 @@ public class LibraryService {
 			e.printStackTrace();
 
 		}
-
-		return libraryRepository.save(library);
+		System.out.println(library.getBooklist());
+		return updateLibrary(library.getId(), library);
 	}
 
-	public Library addBook(Long idLib, Book book, Integer quantity) {
-		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+	public Library addLibraryBook(long id, BookDto book, Integer quantity) {
+		Library library = libraryRepository.findById(id).orElse(null);
+		System.out.println(quantity);
+		System.out.println(quantity instanceof Integer);
+		if (library != null) {
+			Book b;
+			if (bookRepository.existsById(book.getIsbn())) {
+				b = bookRepository.findById(book.getIsbn()).get();
+			} else {
+				b = new Book();
+				b.setIsbn(book.getIsbn());
+				b.setTitle(book.getTitle());
+				b.setAuthor(book.getAuthor());
+				b.setPublisher(book.getPublisher());
+				b.setPublishedYear(book.getPublishedYear());
+				b.setCategory(book.getCategory());
+				b.setLanguage(book.getLanguage());
+				b = bookRepository.save(b);
+			}
 
-		Library library = libraryRepository.findById(idLib).get();
-		library.addBook(book, quantity);
-		return libraryRepository.save(library);
+			library.getBooklist().put(b, quantity);
+
+			return libraryRepository.save(library);
+		}
 	}
 
-	public Library setBookQuantity(Long idLib, Book book, Integer quantity) {
-		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
-
-		Library library = libraryRepository.findById(idLib).get();
-		library.setBookQuantity(book, quantity);
-		return libraryRepository.save(library);
-
-	}
-
-	public Library removeBook(Long idLib, Book book) {
-		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
-
-		Library library = libraryRepository.findById(idLib).get();
-		library.removeBook(book);
-		return libraryRepository.save(library);
-
-	}
-
-	public Library updateLibrary(long id, LibraryDto l) {
+	public Library updateLibrary(long id, Library l) {
 		if (!libraryRepository.existsById(id)) {
 			throw new EntityExistsException("This library does not exists");
 		}
@@ -189,7 +188,7 @@ public class LibraryService {
 		return libraryRepository.findById(id).get();
 	}
 
-	public List<Library> getAllLibrarys(long id) {
+	public List<Library> getAllLibraries() {
 		return libraryRepository.findAll();
 	}
 
