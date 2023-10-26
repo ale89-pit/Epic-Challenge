@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -191,6 +192,29 @@ public class LibraryService {
 			throw new EntityExistsException("This library does not exists");
 		Library library = libraryRepository.findById(idLib).get();
 		library.removeBook(book);
+		return libraryRepository.save(library);
+	}
+
+	public Integer getBookQuantity(Long idLib, Book book) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+		Library library = libraryRepository.findById(idLib).get();
+		return library.getBookQuantity(book);
+	}
+
+	public Library increaseBookQuantity(Long idLib, Set<Book> books) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+		Library library = libraryRepository.findById(idLib).get();
+		library.increaseBooksQuantity(books);
+		return libraryRepository.save(library);
+	}
+
+	public Library decreaseBooksQuantity(Long idLib, Set<Book> books) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+		Library library = libraryRepository.findById(idLib).get();
+		library.decreaseBooksQuantity(books);
 		return libraryRepository.save(library);
 	}
 

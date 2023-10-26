@@ -106,7 +106,8 @@ public class LibraryController {
 		return ResponseEntity.ok(libraryService.addLibraryBook(library_id, book, quantity));
 	}
 
-	// TODO rimuovere moderator?
+	// TODO rimuovere moderator? -> Francesco dice: 'sì, dovrebbe chiamarla solo
+	// l'admin'
 	@DeleteMapping("/{library_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> deleteLibrary(@PathVariable Long library_id) {

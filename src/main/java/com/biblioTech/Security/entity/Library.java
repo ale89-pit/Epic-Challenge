@@ -76,10 +76,27 @@ public class Library {
 		return this.booklist.remove(book);
 	}
 
-	// return the previous quantity null if not exist
-	public Integer setBookQuantity(Book book, Integer quantity) {
-		return this.booklist.replace(book, quantity);
+	// return the actual quantity null if not exist
+	public Integer getBookQuantity(Book book) {
+		return this.booklist.get(book);
+	}
 
+	// return the previous quantity null if not exist
+	public void setBookQuantity(Book book, Integer quantity) {
+		this.booklist.replace(book, quantity);
+	}
+
+	public void increaseBooksQuantity(Set<Book> books) {
+		for (Book book : books) {
+			setBookQuantity(book, getBookQuantity(book) + 1);
+		}
+	}
+
+	public void decreaseBooksQuantity(Set<Book> books) {
+		for (Book book : books) {
+			if (getBookQuantity(book) > 0)
+				setBookQuantity(book, getBookQuantity(book) - 1);
+		}
 	}
 
 }

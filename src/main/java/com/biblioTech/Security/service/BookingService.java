@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.biblioTech.Enum.MembershipCardState;
 import com.biblioTech.Enum.State;
 import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.exception.MyAPIException;
@@ -21,7 +22,9 @@ public class BookingService {
 	BookingRepository bookingRepository;
 
 	public Booking saveBooking(Booking b) {
-		return bookingRepository.save(b);
+		if (b.getCard().getState().equals(MembershipCardState.APPROVED))
+			return bookingRepository.save(b);
+		return null;
 	}
 
 	public Booking updateBooking(Long id, BookingDto b) {
@@ -56,6 +59,10 @@ public class BookingService {
 
 	public List<Booking> getAllBookings() {
 		return bookingRepository.findAll();
+	}
+
+	public List<Booking> getAllBookingsByLibraryId(Long id) {
+		return bookingRepository.findBookingsByLibraryId(id);
 	}
 
 	public String deleteBooking(Long id) {
