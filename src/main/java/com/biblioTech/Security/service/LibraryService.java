@@ -25,7 +25,6 @@ import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 
 import jakarta.persistence.EntityExistsException;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
@@ -38,6 +37,10 @@ public class LibraryService {
 	MunicipalityRepository municipalityRepository;
 	@Autowired
 	BookRepository bookRepository;
+	@Autowired
+	BookService bookService;
+	@Autowired
+	AddressService addressService;
 
 	public Library saveLibrary(LibraryDto l) {
 
@@ -134,36 +137,64 @@ public class LibraryService {
 
 		}
 		System.out.println(library.getBooklist());
-		return updateLibrary(library.getId(), library);
+		return library;
 	}
 
 	public Library addLibraryBook(long id, BookDto book, Integer quantity) {
-		Library library = libraryRepository.findById(id).orElse(null);
-		System.out.println(quantity);
-		System.out.println(quantity instanceof Integer);
-		if (library != null) {
-			Book b;
-			if (bookRepository.existsById(book.getIsbn())) {
-				b = bookRepository.findById(book.getIsbn()).get();
-			} else {
-				b = new Book();
-				b.setIsbn(book.getIsbn());
-				b.setTitle(book.getTitle());
-				b.setAuthor(book.getAuthor());
-				b.setPublisher(book.getPublisher());
-				b.setPublishedYear(book.getPublishedYear());
-				b.setCategory(book.getCategory());
-				b.setLanguage(book.getLanguage());
-				b = bookRepository.save(b);
-			}
 
-			library.getBooklist().put(b, quantity);
-
-			return libraryRepository.save(library);
+		if (!libraryRepository.existsById(id)) {
+			throw new EntityNotFoundException("Library not found for ID: " + id);
 		}
+
+		Library library = libraryRepository.findById(id).get();
+
+		Book b;
+
+		if (bookRepository.existsById(book.getIsbn())) {
+			b = bookRepository.findById(book.getIsbn()).get();
+
+		} else {
+			b = new Book();
+			b.setIsbn(book.getIsbn());
+			b.setTitle(book.getTitle());
+			b.setAuthor(book.getAuthor());
+			b.setPublisher(book.getPublisher());
+			b.setPublishedYear(book.getPublishedYear());
+			b.setCategory(book.getCategory());
+			b.setLanguage(book.getLanguage());
+			b = bookRepository.save(b);
+		}
+
+		library.getBooklist().put(b, quantity);
+
+		return libraryRepository.save(library);
 	}
 
-	public Library updateLibrary(long id, Library l) {
+	public Library addBook(Long idLib, Book book, Integer quantity) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+		Library library = libraryRepository.findById(idLib).get();
+		library.addBook(book, quantity);
+		return libraryRepository.save(library);
+	}
+
+	public Library setBookQuantity(Long idLib, Book book, Integer quantity) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+		Library library = libraryRepository.findById(idLib).get();
+		library.setBookQuantity(book, quantity);
+		return libraryRepository.save(library);
+	}
+
+	public Library removeBook(Long idLib, Book book) {
+		if (!libraryRepository.existsById(idLib))
+			throw new EntityExistsException("This library does not exists");
+		Library library = libraryRepository.findById(idLib).get();
+		library.removeBook(book);
+		return libraryRepository.save(library);
+	}
+
+	public Library updateLibrary(long id, LibraryDto l) {
 		if (!libraryRepository.existsById(id)) {
 			throw new EntityExistsException("This library does not exists");
 		}
