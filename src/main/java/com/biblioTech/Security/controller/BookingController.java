@@ -56,7 +56,7 @@ public class BookingController {
 	 * Crea nuova prenotazione solo se la MembershipCard è stata approvata dalla
 	 * libreria
 	 */
-	@PostMapping("/newRequest/")
+	@PostMapping("/newRequest")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> saveBooking(@RequestBody Booking bookingToSave) {
 		if (bookingService.saveBooking(bookingToSave) != null)
