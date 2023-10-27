@@ -16,11 +16,18 @@ public class AddressService {
 
 	@Autowired
 	AddressRepository addressRepository;
-
 	@Autowired
 	MunicipalityRepository municipalityRepository;
 
-	public Address saveAddress(Address a) {
+	public Address saveAddress(AddressDto addressDto) {
+		Address a = new Address();
+		a.setStreet(addressDto.getStreet());
+		a.setNumber(addressDto.getStreetNumber());
+		if (municipalityRepository.existsById(addressDto.getMunicipality())) {
+			Municipality m = municipalityRepository.findById(addressDto.getMunicipality()).get();
+			a.setMunicipality(m);
+		}
+
 		return addressRepository.save(a);
 	}
 
@@ -47,12 +54,13 @@ public class AddressService {
 		return addressRepository.findById(id).get();
 	}
 
-//      public String deleteAddress(Long id) {
-//  		if (!addressRepository.existsById(id)) {
-//  			throw new MyAPIException(HttpStatus.NOT_FOUND, "This address does not exits");
-//  		}
-//  		addressRepository.deleteById(id);
-//  		
-//  		return "This address has been deleted";
-//  	}
+	// public String deleteAddress(Long id) {
+	// if (!addressRepository.existsById(id)) {
+	// throw new MyAPIException(HttpStatus.NOT_FOUND, "This address does not
+	// exits");
+	// }
+	// addressRepository.deleteById(id);
+	//
+	// return "This address has been deleted";
+	// }
 }

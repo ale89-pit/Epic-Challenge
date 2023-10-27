@@ -3,6 +3,8 @@ package com.biblioTech.Security.entity;
 import java.time.LocalDate;
 
 import com.biblioTech.Enum.MembershipCardState;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,6 +24,7 @@ public class MembershipCard {
 	@Id
 	private String id;
 
+    @JsonIgnoreProperties({"address", "email", "password", "phone", "roles", "booklist"})
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Library library;
 
@@ -29,25 +32,35 @@ public class MembershipCard {
 	private User user;
 
 	@Column(nullable = false)
-	private Boolean blacklist;
+	private Boolean blacklist ;
 
 	@Column(nullable = false)
 	private MembershipCardState state;
+	
+	@Column(name = "insert_date")
+	private LocalDate insertDate;
 
-	@Column(nullable = false)
-	private LocalDate date;
+	@Column(name = "start_date")
+	private LocalDate startDate;
 
-	public MembershipCard(Library library, User user, Boolean blacklist, MembershipCardState state, LocalDate date) {
+	@Column(name = "end_date")
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate endDate;
+	
+	public MembershipCard(Library library, User user, Boolean blacklist, MembershipCardState state, LocalDate startDate,LocalDate endDate) {
 		this.library = library;
 		this.user = user;
-		this.blacklist = blacklist;
+		this.blacklist = false;
 		this.state = state;
-		this.date = date;
+		this.insertDate=  LocalDate.now();
+		this.startDate =startDate;
+		this.endDate= endDate;
 		setId();
 	}
 
+	//TODO modificare i vaolori di creazione della tessera per renderla leggibile,ricercabile e veritiera(idLibreria-Idutente-dataInserimento)
 	public void setId() {
-		this.id = library.getName() + "." + user.getFullname() + "." + date.toString();
+		this.id = library.getName() + "." + user.getFullname() + "." + insertDate.toString();
 	}
 
 	public void setLibrary(Library library) {
@@ -66,8 +79,11 @@ public class MembershipCard {
 		this.state = state;
 	}
 
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public void setStartDate(LocalDate date) {
+		this.startDate = date;
+	}
+	public void setEndDate(LocalDate date) {
+		this.endDate = date;
 	}
 
 }

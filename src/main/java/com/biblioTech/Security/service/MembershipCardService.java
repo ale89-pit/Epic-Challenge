@@ -1,5 +1,6 @@
 package com.biblioTech.Security.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,24 @@ public class MembershipCardService {
 	@Autowired
 	UserRepository userRepository;
 
-	public MembershipCard saveMembershipCard(MembershipCard c) {
-		return membershipCardRepository.save(c);
+	public MembershipCard saveMembershipCard(MembershipCardDto c) {
+		
+		if(userRepository.existsByUsername(c.getUsername())) {
+			User u = userRepository.findByUsername(c.getUsername()).get();
+			if(libraryRepository.existsById(c.getLibraryId())) {
+				Library l = libraryRepository.findById(c.getLibraryId()).get();
+				if(!membershipCardRepository.existsByUserAndLibrary(u, l)) {
+					MembershipCard card = new MembershipCard(l,u,false,MembershipCardState.WAITING_FOR_APPROVAL,null,null);
+				
+					return membershipCardRepository.save(card);
+					 
+				}
+				
+				throw new EntityExistsException( u.getUsername() + " alredy has a card on library " + l.getName()); 
+			}
+			throw new EntityExistsException("Library with id " + c.getLibraryId() + " does not exists");
+		}
+		throw new EntityExistsException( c.getUsername()+ " does not exist");
 	}
 
 	public MembershipCard updateMembershipCard(String id, MembershipCardDto c) {
@@ -54,6 +71,69 @@ public class MembershipCardService {
 			card.setBlacklist(c.getBlacklist());
 
 		return membershipCardRepository.save(card);
+	}
+	
+	public MembershipCard acceptCard(String card_id,LocalDate endDate) {
+		if(!membershipCardRepository.existsById(card_id)) {
+			throw new EntityExistsException("This card does not exist " + card_id);
+		}else {
+		MembershipCard m = 	membershipCardRepository.findById(card_id).get();
+		m.setState(MembershipCardState.APPROVED);
+		m.setStartDate(LocalDate.now());
+		m.setEndDate(endDate);
+		return membershipCardRepository.save(m);
+		}
+		
+	}
+	
+	//rifiuta la carta perchè dobbiamo far decidere alla libreria se accettare o meno la tessera
+	public MembershipCard rejectCard(String card_id) {
+		if(!membershipCardRepository.existsById(card_id)) {
+			throw new EntityExistsException("This card does not exist " + card_id);
+		}else {
+		MembershipCard m = 	membershipCardRepository.findById(card_id).get();
+		m.setState(MembershipCardState.REJECTED);
+		m.setEndDate(LocalDate.now());
+		return membershipCardRepository.save(m);
+		}
+		
+	}
+	public MembershipCard blockCard(String card_id) {
+		if(!membershipCardRepository.existsById(card_id)) {
+			throw new EntityExistsException("This card does not exist " + card_id);
+		}else {
+			
+		MembershipCard m = 	membershipCardRepository.findById(card_id).get();
+		 if(m.getState().equals(MembershipCardState.APPROVED)) {
+			 m.setBlacklist(true);
+			 return membershipCardRepository.save(m);
+			 
+		 }
+		 throw new EntityExistsException("This card is not approved, you can't block card");
+		}
+		
+	}
+	
+	public MembershipCard restoreCard(String card_id) {
+		if(!membershipCardRepository.existsById(card_id)) {
+			throw new EntityExistsException("This card does not exist " + card_id);
+		}else {
+		MembershipCard m = 	membershipCardRepository.findById(card_id).get();
+		m.setBlacklist(false);
+		return membershipCardRepository.save(m);
+		}
+		
+	}
+	public MembershipCard renewalCard(String card_id, LocalDate endDate) {
+		if(!membershipCardRepository.existsById(card_id)) {
+			throw new EntityExistsException("This card does not exist " + card_id);
+		}else {
+		MembershipCard m = 	membershipCardRepository.findById(card_id).get();
+		m.setStartDate(LocalDate.now());
+		m.setEndDate(endDate);
+		return membershipCardRepository.save(m);
+		}
+		
 	}
 
 	public MembershipCard getMembershipCard(String id) {

@@ -17,8 +17,8 @@ import com.biblioTech.Enum.Languages;
 import com.biblioTech.Security.entity.Address;
 import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Library;
-import com.biblioTech.Security.entity.Municipality;
 import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.BookRepository;
@@ -26,6 +26,7 @@ import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 
 import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
@@ -36,30 +37,31 @@ public class LibraryService {
 	LibraryRepository libraryRepository;
 	@Autowired
 	MunicipalityRepository municipalityRepository;
-	@Autowired
-	BookRepository bookRepository;
+
 	@Autowired
 	BookService bookService;
 	@Autowired
+	BookRepository bookRepository;
+	@Autowired
+	EntityManager entityManager;
+	@Autowired
 	AddressService addressService;
 
-	public Library saveLibrary(LibraryDto l) {
+	public String addAddressToLibrary(long id, AddressDto a) {
+		try {
+			if (libraryRepository.existsById(id)) {
+				Library lib = libraryRepository.findById(id).get();
+				Address libraryAddress = addressService.saveAddress(a);
+				lib.setAddress(libraryAddress);
+				libraryRepository.save(lib);
+				return "Address added succefully";
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw (e);
+		}
+		return "Library not present";
 
-		Library lib = new Library();
-		Address a = new Address();
-		Municipality m = municipalityRepository.findById(l.getAddress().getMunicipality()).get();
-
-		a.setMunicipality(m);
-		a.setStreet(l.getAddress().getStreet());
-		a.setNumber(l.getAddress().getStreetNumber());
-
-		lib.setName(l.getName());
-		lib.setEmail(l.getEmail());
-		lib.setPassword(l.getPassword());
-		lib.setPhone(l.getPhone());
-		lib.setAddress(a);
-
-		return libraryRepository.save(lib);
 	}
 
 	@Transactional

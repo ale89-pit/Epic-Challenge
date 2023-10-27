@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
 import com.biblioTech.Security.repository.FileDataRepository;
@@ -46,11 +47,16 @@ public class LibraryController {
 		return ResponseEntity.ok(libraryService.getLibraryById(library_id));
 	}
 
-	// TODO Serve?!
-	@PostMapping("/add")
+//	@PutMapping("/update")
+//	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+//	public ResponseEntity<?> updateLibrary(@RequestBody LibraryDto library) {
+//		return ResponseEntity.ok(libraryService.updateLibrary(library));
+//	}
+
+	@PutMapping("/address/{library_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> saveLibrary(@RequestBody LibraryDto library) {
-		return ResponseEntity.ok(libraryService.saveLibrary(library));
+	public ResponseEntity<?> addAddressToLibrary(@PathVariable long library_id, @RequestBody AddressDto address) {
+		return ResponseEntity.ok(libraryService.addAddressToLibrary(library_id, address));
 	}
 
 	@PutMapping("/{library_id}")
@@ -61,25 +67,27 @@ public class LibraryController {
 
 	// TODO correggere il metodo
 	@PostMapping("/addBooks/{library_id}")
-//	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> addBooks(@PathVariable Long library_id, @RequestParam("file") MultipartFile file) {
 		String message = "";
 		try {
-//	    	salvo il csv in resources
+			// salvo il csv in resources
 			fileDataService.save(file);
-//			FileData f = new FileData();
-//
-//			f.setNome(file.getOriginalFilename());
-////	      recupero il file in locale con il metodo load() del fileDataLocal 
-//			Resource fileCsv = fileDataService.load(file.getOriginalFilename());
-//
-////	      recuperanto il file eseguo questa funzione per recuperare il path giusto che si userà poi nel frontEnd
-//			String url = MvcUriComponentsBuilder
-//					.fromMethodName(LibraryController.class, "getFile", fileCsv.getFilename().toString()).build()
-//					.toString();
-//
-//			f.setFilePath(url);
-//			FileData saved = fileDataRepository.save(f);
+			// FileData f = new FileData();
+			//
+			// f.setNome(file.getOriginalFilename());
+			//// recupero il file in locale con il metodo load() del fileDataLocal
+			// Resource fileCsv = fileDataService.load(file.getOriginalFilename());
+			//
+			//// recuperanto il file eseguo questa funzione per recuperare il path giusto
+			// che si userà poi nel frontEnd
+			// String url = MvcUriComponentsBuilder
+			// .fromMethodName(LibraryController.class, "getFile",
+			// fileCsv.getFilename().toString()).build()
+			// .toString();
+			//
+			// f.setFilePath(url);
+			// FileData saved = fileDataRepository.save(f);
 
 			libraryService.addLibraryBooks(library_id, file.getOriginalFilename());
 			message = "Uploaded the file successfully: " + file.getOriginalFilename();
@@ -100,16 +108,14 @@ public class LibraryController {
 	}
 
 	@PostMapping("/addBook/{library_id}/{quantity}")
-//	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	// @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> addBook(@PathVariable Long library_id, @PathVariable Integer quantity,
 			@RequestBody BookDto book) {
 		return ResponseEntity.ok(libraryService.addLibraryBook(library_id, book, quantity));
 	}
 
-	// TODO rimuovere moderator? -> Francesco dice: 'sì, dovrebbe chiamarla solo
-	// l'admin'
 	@DeleteMapping("/{library_id}")
-	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> deleteLibrary(@PathVariable Long library_id) {
 		return ResponseEntity.ok(libraryService.deleteLibrary(library_id));
 	}
