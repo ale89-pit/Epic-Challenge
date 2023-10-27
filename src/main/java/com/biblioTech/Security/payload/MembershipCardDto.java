@@ -19,7 +19,6 @@ public class MembershipCardDto {
 
 	private MembershipCardState state;
 
-//	@OneToMany(mappedBy = "card",fetch = FetchType.EAGER)
-//	private List<Booking> bookings = new ArrayList<Booking>();
+
 
 }
