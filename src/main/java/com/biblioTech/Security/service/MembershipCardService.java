@@ -35,7 +35,7 @@ public class MembershipCardService {
 			User u = userRepository.findByUsername(c.getUsername()).get();
 			if(libraryRepository.existsById(c.getLibraryId())) {
 				Library l = libraryRepository.findById(c.getLibraryId()).get();
-				if(!membershipCardRepository.existsByUserAndLibrary(null, null)) {
+				if(!membershipCardRepository.existsByUserAndLibrary(u, l)) {
 					MembershipCard card = new MembershipCard(l,u,false,MembershipCardState.WAITING_FOR_APPROVAL,null,null);
 				
 					return membershipCardRepository.save(card);
