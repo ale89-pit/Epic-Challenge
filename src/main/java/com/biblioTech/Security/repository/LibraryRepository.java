@@ -13,4 +13,5 @@ public interface LibraryRepository extends JpaRepository<Library, Long> {
 	Optional<Library> findByEmail(String email);
 
 	Boolean existsByEmail(String email);
+
 }
