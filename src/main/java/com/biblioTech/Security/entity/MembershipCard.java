@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.biblioTech.Enum.MembershipCardState;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,6 +24,7 @@ public class MembershipCard {
 	@Id
 	private String id;
 
+    @JsonIgnoreProperties({"address", "email", "password", "phone", "roles", "booklist"})
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Library library;
 

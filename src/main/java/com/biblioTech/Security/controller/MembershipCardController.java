@@ -4,18 +4,19 @@ import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioTech.Security.entity.MembershipCard;
 import com.biblioTech.Security.payload.MembershipCardDto;
 import com.biblioTech.Security.service.MembershipCardService;
+
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -33,7 +34,7 @@ public class MembershipCardController {
 	
 	@PutMapping("/accept/{card_id}")
 	@PreAuthorize("hasRole('MODERATOR')")
-	public MembershipCard acceptCard(@PathVariable String card_id, @RequestBody LocalDate endDate) {
+	public MembershipCard acceptCard(@PathVariable String card_id, @RequestParam("endDate") LocalDate endDate) {
 		System.out.println(card_id + "data" + endDate);
 		return membershipCardService.acceptCard(card_id,endDate);
 		
@@ -57,7 +58,7 @@ public class MembershipCardController {
 	//quando la carta è scaduta o bloccata
 	@PutMapping("/restore/{card_id}")
 	@PreAuthorize("hasRole('MODERATOR')")
-	public MembershipCard restoreCard(@PathVariable String card_id,@RequestBody LocalDate endDate) {
+	public MembershipCard restoreCard(@PathVariable String card_id,@RequestParam("endDate") LocalDate endDate) {
 		
 		return membershipCardService.acceptCard(card_id,endDate);
 		
