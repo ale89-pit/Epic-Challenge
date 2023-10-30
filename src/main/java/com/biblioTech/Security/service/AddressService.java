@@ -22,8 +22,8 @@ public class AddressService {
 		Address a = new Address();
 		a.setStreet(addressDto.getStreet());
 		a.setNumber(addressDto.getStreetNumber());
-		if (municipalityRepository.existsById(addressDto.getMunicipality())) {
-			Municipality m = municipalityRepository.findById(addressDto.getMunicipality()).get();
+		if (municipalityRepository.existsById(addressDto.getMunicipalityId())) {
+			Municipality m = municipalityRepository.findById(addressDto.getMunicipalityId()).get();
 			a.setMunicipality(m);
 		}
 
@@ -32,12 +32,15 @@ public class AddressService {
 
 	public Address updateAddress(long id, AddressDto a) {
 		if (!addressRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Address","id", id );
+			throw new ResourceNotFoundException("Address", "id", id);
 		}
 		Address address = addressRepository.findById(id).get();
-		Municipality municipality = municipalityRepository.findById(a.getMunicipality()).get();
+		if (!municipalityRepository.existsById(a.getMunicipalityId())) {
+			throw new ResourceNotFoundException("Municipality", "id", a.getMunicipalityId());
+		}
+		Municipality municipality = municipalityRepository.findById(a.getMunicipalityId()).get();
 
-		if (a.getMunicipality() != null)
+		if (a.getMunicipalityId() != null)
 			address.setMunicipality(municipality);
 
 		if (a.getStreet() != null)

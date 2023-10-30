@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioTech.Security.payload.AddressDto;
+import com.biblioTech.Security.payload.UserDto;
 import com.biblioTech.Security.service.UserService;
 
 @RestController
@@ -21,10 +21,11 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@PutMapping("/add/{user_id}")
+	// metodo per aggiornare anche solo unn campo dell'utente Dto
+	@PutMapping("/{user_id}")
 	@PreAuthorize("hasRole('USER')")
-	public ResponseEntity<String> addAddressToUser(@PathVariable long user_id, @RequestBody AddressDto address) {
-		return ResponseEntity.ok(userService.addAddressUser(user_id, address));
+	public ResponseEntity<String> updateUser(@PathVariable long user_id, @RequestBody UserDto userToUpdate) {
+		return ResponseEntity.ok(userService.updateUser(user_id, userToUpdate));
 	}
 
 }

@@ -19,8 +19,12 @@ public class DatabaseUpdateService {
 	// di scadenza è stata superata
 	@Scheduled(cron = "0 0 0 * * *") // Esegue ogni giorno a mezzanotte
 	public void updateBookingState() {
-		bookingRepository.findAll().stream().filter(b -> b.getStartDate() != null)
-				.filter(b -> b.getEndDate().compareTo(LocalDate.now()) < 0).forEach(b -> {
+		// filtra solo quelli con StartDate presente, EndDate < oggi , state != EXPIRED
+		// per questi cambia lo state in EXPIRED e salva la booking
+		bookingRepository
+				.findAll().stream().filter(b -> b.getStartDate() != null
+						&& b.getEndDate().compareTo(LocalDate.now()) < 0 && !b.getState().equals(State.EXPIRED))
+				.forEach(b -> {
 					b.setState(State.EXPIRED);
 					bookingRepository.save(b);
 					System.out.println("Booking with id: " + b.getId() + " expired");

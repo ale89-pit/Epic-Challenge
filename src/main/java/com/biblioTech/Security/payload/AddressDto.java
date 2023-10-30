@@ -15,6 +15,6 @@ public class AddressDto {
 
 	private String street;
 	private String streetNumber;
-	private Long municipality;
+	private Long municipalityId;
 
 }
