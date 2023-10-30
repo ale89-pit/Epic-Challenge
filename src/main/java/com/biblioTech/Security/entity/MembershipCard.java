@@ -8,17 +8,22 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Table(name = "membership_card")
 @NoArgsConstructor
 @Getter
+@ToString
 public class MembershipCard {
 
 	@Id
@@ -35,6 +40,7 @@ public class MembershipCard {
 	private Boolean blacklist ;
 
 	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
 	private MembershipCardState state;
 	
 	@Column(name = "insert_date")
@@ -85,5 +91,7 @@ public class MembershipCard {
 	public void setEndDate(LocalDate date) {
 		this.endDate = date;
 	}
+	
+	
 
 }

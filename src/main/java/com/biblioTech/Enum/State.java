@@ -3,9 +3,8 @@ package com.biblioTech.Enum;
 public enum State {
 	
 	    PENDING,
-	    APPROVED,
 	    REJECTED,
-	    IN_PROGRESS,
+	    APPROVED,
 	    EXPIRED,
 	    RETURNED
 	

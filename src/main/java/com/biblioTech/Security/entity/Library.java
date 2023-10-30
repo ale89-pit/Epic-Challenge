@@ -86,16 +86,39 @@ public class Library {
 		this.booklist.replace(book, quantity);
 	}
 
+	// il metodo non cambia le quantità perchè non agisce sul Map della classe
+//	public void increaseBooksQuantity(Set<Book> books) {
+//		for (Book book : books) {
+//			setBookQuantity(book, getBookQuantity(book) + 1);
+//		}
+//	}
+	
+	
 	public void increaseBooksQuantity(Set<Book> books) {
 		for (Book book : books) {
-			setBookQuantity(book, getBookQuantity(book) + 1);
+			for (Map.Entry<Book, Integer> entry : booklist.entrySet()) {
+				Book singlebook = entry.getKey();
+				Integer quantity = entry.getValue();
+				if(book.getIsbn().equals(singlebook.getIsbn())) {
+					
+						entry.setValue(quantity + 1);
+				}
+			}
+			
 		}
 	}
 
 	public void decreaseBooksQuantity(Set<Book> books) {
 		for (Book book : books) {
-			if (getBookQuantity(book) > 0)
-				setBookQuantity(book, getBookQuantity(book) - 1);
+			for (Map.Entry<Book, Integer> entry : booklist.entrySet()) {
+				Book singlebook = entry.getKey();
+				Integer quantity = entry.getValue();
+				if(book.getIsbn().equals(singlebook.getIsbn())) {
+					if (quantity > 0)
+						entry.setValue(quantity - 1);
+				}
+			}
+			
 		}
 	}
 

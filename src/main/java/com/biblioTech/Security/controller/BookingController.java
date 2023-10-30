@@ -18,6 +18,8 @@ import com.biblioTech.Enum.State;
 import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.entity.Library;
+import com.biblioTech.Security.payload.BookingDto;
+import com.biblioTech.Security.repository.BookingRepository;
 import com.biblioTech.Security.service.BookingService;
 import com.biblioTech.Security.service.LibraryService;
 import com.biblioTech.message.ResponseMessage;
@@ -56,11 +58,14 @@ public class BookingController {
 	 * Crea nuova prenotazione solo se la MembershipCard è stata approvata dalla
 	 * libreria
 	 */
+	//TODO cambiare Booking con BookingDto e cambiare la logica del service
 	@PostMapping("/newRequest")
-	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> saveBooking(@RequestBody Booking bookingToSave) {
-		if (bookingService.saveBooking(bookingToSave) != null)
-			return ResponseEntity.ok(bookingToSave);
+	@PreAuthorize("hasRole('USER')")
+	public ResponseEntity<?> saveBooking(@RequestBody BookingDto bookingToSave) {
+		
+		Booking b = bookingService.saveBooking(bookingToSave);
+		if ( b!= null)
+			return ResponseEntity.ok(b);
 		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE)
 				.body(new ResponseMessage("Membership card not accepted"));
 	}

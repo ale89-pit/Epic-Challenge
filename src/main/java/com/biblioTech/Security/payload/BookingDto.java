@@ -21,8 +21,8 @@ import lombok.ToString;
 @AllArgsConstructor
 public class BookingDto {
 
-	private MembershipCard card;
-	private Set<Book> books = new HashSet<Book>();
+	private String cardId;
+	private Set<String> books = new HashSet<String>();
 	private LocalDate startDate;
 	private LocalDate endDate;
 	private LocalDate restitutionDate;

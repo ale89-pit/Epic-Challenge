@@ -58,7 +58,9 @@ public class SecurityConfig {
 				.authorizeHttpRequests((authorize) -> authorize.requestMatchers(mvc.pattern(HttpMethod.GET, "/api/**"))
 						.permitAll().requestMatchers(mvc.pattern("/api/auth/**")).permitAll()
 						.requestMatchers(mvc.pattern("/library/**")).hasRole("MODERATOR")
-						.requestMatchers(mvc.pattern("/user/**")).hasRole("USER").anyRequest().authenticated())
+						.requestMatchers(mvc.pattern("/user/**")).hasRole("USER")
+						.requestMatchers(mvc.pattern("/booking/**")).hasRole("USER")
+						.anyRequest().authenticated())
 				.exceptionHandling(exception -> exception.authenticationEntryPoint(authenticationEntryPoint))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
