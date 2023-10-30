@@ -43,7 +43,9 @@ public class UserService {
 				u.setEmail(u.getEmail());
 			}
 			if (userDto.getUsername() != null) {
+				// TODO: controlla se username già esistente
 				u.setUsername(userDto.getUsername());
+
 			} else {
 				u.setUsername(u.getUsername());
 			}

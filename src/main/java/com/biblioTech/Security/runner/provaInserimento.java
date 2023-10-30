@@ -15,6 +15,7 @@ import com.biblioTech.Security.repository.MunicipalityRepository;
 import com.biblioTech.Security.repository.ProvinceRepository;
 import com.biblioTech.Security.repository.UserRepository;
 import com.biblioTech.Security.service.BookService;
+import com.biblioTech.Security.service.DatabaseUpdateService;
 import com.biblioTech.Security.service.FileDataService;
 import com.biblioTech.Security.service.LibraryService;
 
@@ -44,6 +45,9 @@ public class provaInserimento implements ApplicationRunner {
 	BookRepository bookRepository;
 	@Autowired
 	FileDataService fileDataService;
+
+	@Autowired
+	DatabaseUpdateService databaseUpdateService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
@@ -158,6 +162,10 @@ public class provaInserimento implements ApplicationRunner {
 
 //		BookDto b = new BookDto("9788800500876", "La vera storia di Emanuele Syrbe", "Emanuele Syrbe", "Publisher", LocalDate.of(2023,10,22),Category.AUTOBIOGRAPHY, Languages.ITALIAN);
 //		libService.addLibraryBook(1l, b, 30);
+
+		// aggiornamento data scadenza
+		databaseUpdateService.updateBookingState();
+
 	}
 
 }

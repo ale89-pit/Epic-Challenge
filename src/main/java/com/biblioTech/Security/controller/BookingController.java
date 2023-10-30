@@ -16,12 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioTech.Enum.State;
 import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.payload.BookingDto;
-import com.biblioTech.Security.repository.BookingRepository;
 import com.biblioTech.Security.service.BookingService;
 import com.biblioTech.Security.service.LibraryService;
 import com.biblioTech.message.ResponseMessage;
@@ -60,13 +58,13 @@ public class BookingController {
 	 * Crea nuova prenotazione solo se la MembershipCard è stata approvata dalla
 	 * libreria
 	 */
-	//TODO cambiare Booking con BookingDto e cambiare la logica del service
+	// TODO cambiare Booking con BookingDto e cambiare la logica del service
 	@PostMapping("/newRequest")
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<?> saveBooking(@RequestBody BookingDto bookingToSave) {
-		
+
 		Booking b = bookingService.saveBooking(bookingToSave);
-		if ( b!= null)
+		if (b != null)
 			return ResponseEntity.ok(b);
 		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE)
 				.body(new ResponseMessage("Membership card not accepted"));
@@ -74,7 +72,8 @@ public class BookingController {
 
 	@PostMapping("/accept/{library_id}/{booking_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> acceptBooking(@PathVariable Long library_id, @PathVariable Long booking_id,@RequestParam("endDate") LocalDate endDate) {
+	public ResponseEntity<?> acceptBooking(@PathVariable Long library_id, @PathVariable Long booking_id,
+			@RequestParam("endDate") LocalDate endDate) {
 		try {
 			Library library = libraryService.getLibraryById(library_id);
 			Booking booking = bookingService.getBooking(booking_id);
@@ -104,13 +103,18 @@ public class BookingController {
 		}
 
 	}
-	
+
 	@PostMapping("/reject/{library_id}/{booking_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> rejectBooking(@PathVariable Long id){
-		bookingService.rejectBooking(id);
-		
-		return ResponseEntity.ok(bookingService.getBooking(id));
+	public ResponseEntity<?> rejectBooking(@PathVariable Long id) {
+		try {
+			bookingService.rejectBooking(id);
+			return ResponseEntity.ok(bookingService.getBooking(id));
+
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage(e.getMessage()));
+		}
+
 	}
 
 }
