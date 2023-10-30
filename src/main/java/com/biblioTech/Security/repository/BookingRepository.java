@@ -15,6 +15,6 @@ public interface BookingRepository extends JpaRepository<Booking, Long>{
 	@Query("SELECT b FROM Booking b WHERE b.card.library.id = :libraryId")
     List<Booking> findBookingsByLibraryId(@Param("libraryId") Long libraryId);
 	
-	@Query("SELECT b FROM Booking b WHERE b.endDate < NOW()")
+	@Query("SELECT b FROM Booking b WHERE b.endDate > NOW()")
 	List<Booking> findBookingExpired();
 }

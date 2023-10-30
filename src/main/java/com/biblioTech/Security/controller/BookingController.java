@@ -1,5 +1,6 @@
 package com.biblioTech.Security.controller;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioTech.Enum.State;
@@ -72,7 +74,7 @@ public class BookingController {
 
 	@PostMapping("/{library_id}/{booking_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> acceptBooking(@PathVariable Long library_id, @PathVariable Long booking_id) {
+	public ResponseEntity<?> acceptBooking(@PathVariable Long library_id, @PathVariable Long booking_id,@RequestParam("endDate") LocalDate endDate) {
 		try {
 			Library library = libraryService.getLibraryById(library_id);
 			Booking booking = bookingService.getBooking(booking_id);
@@ -84,8 +86,8 @@ public class BookingController {
 				// se tutti i libri della prenotazione sono nella booklist della libreria
 				if (booking.getBooks().stream().allMatch(book -> libraryBooklist.get(book) != null)) {
 
-					bookingService.setState(booking_id, State.APPROVED);
-					libraryService.decreaseBooksQuantity(library_id, booking.getBooks());
+					bookingService.acceptBooking(booking_id, endDate);
+//					libraryService.decreaseBooksQuantity(library_id, booking.getBooks());
 					return ResponseEntity.status(HttpStatus.ACCEPTED).body(bookingService.getBooking(booking_id));
 
 				}
@@ -102,11 +104,11 @@ public class BookingController {
 		}
 
 	}
-
-	/*
-	 * TODO: metodo per restituzione di uno o più libri che aggiorna la quantità
-	 * nella booklist della libreria
-	 */
-//		libraryService.decreaseBooksQuantity(library_id, bookingToSave.getBooks());
+	
+	@PostMapping("/{library_id}/{booking_id}")
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	public ResponseEntity<?> rejectBooking(@PathVariable Long id){
+		return null;
+	}
 
 }

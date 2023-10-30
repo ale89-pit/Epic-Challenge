@@ -59,7 +59,7 @@ public class SecurityConfig {
 						.permitAll().requestMatchers(mvc.pattern("/api/auth/**")).permitAll()
 						.requestMatchers(mvc.pattern("/library/**")).hasRole("MODERATOR")
 						.requestMatchers(mvc.pattern("/user/**")).hasRole("USER")
-						.requestMatchers(mvc.pattern("/booking/**")).hasRole("USER")
+						.requestMatchers(mvc.pattern("/booking/**")).hasAnyRole("USER","MODERATOR")
 						.anyRequest().authenticated())
 				.exceptionHandling(exception -> exception.authenticationEntryPoint(authenticationEntryPoint))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

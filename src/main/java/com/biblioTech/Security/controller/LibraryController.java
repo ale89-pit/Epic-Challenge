@@ -67,7 +67,7 @@ public class LibraryController {
 
 	// TODO correggere il metodo
 	@PostMapping("/addBooks/{library_id}")
-	// @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> addBooks(@PathVariable Long library_id, @RequestParam("file") MultipartFile file) {
 		String message = "";
 		try {
@@ -108,7 +108,7 @@ public class LibraryController {
 	}
 
 	@PostMapping("/addBook/{library_id}/{quantity}")
-	// @PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> addBook(@PathVariable Long library_id, @PathVariable Integer quantity,
 			@RequestBody BookDto book) {
 		return ResponseEntity.ok(libraryService.addLibraryBook(library_id, book, quantity));
