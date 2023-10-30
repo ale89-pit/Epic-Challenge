@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.biblioTech.Enum.Category;
@@ -17,7 +16,7 @@ import com.biblioTech.Enum.Languages;
 import com.biblioTech.Security.entity.Address;
 import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Library;
-import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.exception.ResourceNotFoundException;
 import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
@@ -25,9 +24,7 @@ import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 
-import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -147,7 +144,7 @@ public class LibraryService {
 	public Library addLibraryBook(long id, BookDto book, Integer quantity) {
 
 		if (!libraryRepository.existsById(id)) {
-			throw new EntityNotFoundException("Library not found for ID: " + id);
+			throw new ResourceNotFoundException("Library","id", id );
 		}
 
 		Library library = libraryRepository.findById(id).get();
@@ -177,7 +174,7 @@ public class LibraryService {
 
 	public Library addBook(Long idLib, Book book, Integer quantity) {
 		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", idLib );
 		Library library = libraryRepository.findById(idLib).get();
 		library.addBook(book, quantity);
 		return libraryRepository.save(library);
@@ -185,7 +182,7 @@ public class LibraryService {
 
 	public Library setBookQuantity(Long idLib, Book book, Integer quantity) {
 		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", idLib );
 		Library library = libraryRepository.findById(idLib).get();
 		library.setBookQuantity(book, quantity);
 		return libraryRepository.save(library);
@@ -193,7 +190,7 @@ public class LibraryService {
 
 	public Library removeBook(Long idLib, Book book) {
 		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", idLib );
 		Library library = libraryRepository.findById(idLib).get();
 		library.removeBook(book);
 		return libraryRepository.save(library);
@@ -201,14 +198,14 @@ public class LibraryService {
 
 	public Integer getBookQuantity(Long idLib, Book book) {
 		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", idLib );
 		Library library = libraryRepository.findById(idLib).get();
 		return library.getBookQuantity(book);
 	}
 
 	public Library increaseBookQuantity(Long idLib, Set<Book> books) {
 		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", idLib );
 		Library library = libraryRepository.findById(idLib).get();
 		library.increaseBooksQuantity(books);
 		return libraryRepository.save(library);
@@ -216,7 +213,7 @@ public class LibraryService {
 
 	public Library decreaseBooksQuantity(Long idLib, Set<Book> books) {
 		if (!libraryRepository.existsById(idLib))
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", idLib );
 		Library library = libraryRepository.findById(idLib).get();
 		library.decreaseBooksQuantity(books);
 		return libraryRepository.save(library);
@@ -224,7 +221,7 @@ public class LibraryService {
 
 	public Library updateLibrary(long id, LibraryDto l) {
 		if (!libraryRepository.existsById(id)) {
-			throw new EntityExistsException("This library does not exists");
+			throw new ResourceNotFoundException("Library","id", id );
 		}
 		Library library = libraryRepository.findById(id).get();
 
@@ -253,7 +250,7 @@ public class LibraryService {
 
 	public String deleteLibrary(Long id) {
 		if (!libraryRepository.existsById(id)) {
-			throw new MyAPIException(HttpStatus.NOT_FOUND, "This library does not exits");
+			throw new ResourceNotFoundException("Library","id", id );
 		}
 		libraryRepository.deleteById(id);
 

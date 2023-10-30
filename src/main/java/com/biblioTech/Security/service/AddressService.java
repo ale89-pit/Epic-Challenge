@@ -5,11 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.biblioTech.Security.entity.Address;
 import com.biblioTech.Security.entity.Municipality;
+import com.biblioTech.Security.exception.ResourceNotFoundException;
 import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.repository.AddressRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
-
-import jakarta.persistence.EntityExistsException;
 
 @Service
 public class AddressService {
@@ -33,7 +32,7 @@ public class AddressService {
 
 	public Address updateAddress(long id, AddressDto a) {
 		if (!addressRepository.existsById(id)) {
-			throw new EntityExistsException("This address does not exists");
+			throw new ResourceNotFoundException("Address","id", id );
 		}
 		Address address = addressRepository.findById(id).get();
 		Municipality municipality = municipalityRepository.findById(a.getMunicipality()).get();
