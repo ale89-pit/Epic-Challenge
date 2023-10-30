@@ -31,9 +31,11 @@ public class MembershipCardService {
 	UserRepository userRepository;
 
 	public MembershipCard saveMembershipCard(MembershipCardDto c) {
-
+		
 		if (userRepository.existsByUsername(c.getUsername())) {
 			User u = userRepository.findByUsername(c.getUsername()).get();
+			if(!u.getIsActive())
+				throw new EntityExistsException(u.getUsername() + " not active");
 			if (libraryRepository.existsById(c.getLibraryId())) {
 				Library l = libraryRepository.findById(c.getLibraryId()).get();
 				if (!membershipCardRepository.existsByUserAndLibrary(u, l)) {

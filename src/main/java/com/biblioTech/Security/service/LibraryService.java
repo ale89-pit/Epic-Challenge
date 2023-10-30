@@ -66,9 +66,10 @@ public class LibraryService {
 
 	@Transactional
 	public Library addLibraryBooks(long id, String filename) {
-
-		BufferedReader brList;
 		Library library = libraryRepository.findById(id).get();
+		if(!library.getIsActive())
+			throw new EntityExistsException(library.getName() + " not active");
+		BufferedReader brList;
 		String folder = System.getProperty("user.dir");
 		System.out.println(filename);
 		try {
@@ -150,7 +151,8 @@ public class LibraryService {
 		}
 
 		Library library = libraryRepository.findById(id).get();
-
+		if(!library.getIsActive())
+			throw new EntityExistsException(library.getName() + " not active");
 		Book b;
 
 		if (bookRepository.existsById(book.getIsbn())) {

@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.emitter.EmitterException;
 
 import com.biblioTech.Enum.MembershipCardState;
 import com.biblioTech.Enum.State;
@@ -49,12 +50,15 @@ public class BookingService {
 				Integer quantity = entry.getValue();
 				
 				
-				if(book.getIsbn().equals(isbn)) {
+				if(book.getIsbn().equals(isbn) && (quantity>0)) {
 					System.out.println(book);
 					b.getBooks().add(book);
 					
 					
 				}
+//				else {
+//					throw new EmitterException(book.getIsbn() +  book.getTitle() + " is out of the library ");
+//				}
 				
 			} 
 		}
