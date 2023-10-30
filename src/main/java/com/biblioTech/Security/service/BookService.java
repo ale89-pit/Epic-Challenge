@@ -3,15 +3,12 @@ package com.biblioTech.Security.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.biblioTech.Security.entity.Book;
-import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.exception.ResourceNotFoundException;
 import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.repository.BookRepository;
-
-import jakarta.persistence.EntityExistsException;
 
 @Service
 public class BookService {
@@ -30,7 +27,7 @@ public class BookService {
 
 	public Book updateBook(String id, BookDto b) {
 		if (!bookRepository.existsById(id)) {
-			throw new EntityExistsException("Book with id " + id + " does not exists");
+			throw new ResourceNotFoundException("Bookk","id", Long.parseLong(id) );
 		}
 		Book book = bookRepository.findById(id).get();
 
@@ -65,7 +62,7 @@ public class BookService {
 
 	public String deleteBook(String id) {
 		if (!bookRepository.existsById(id)) {
-			throw new MyAPIException(HttpStatus.NOT_FOUND, "Book with id " + id + " does not exits");
+			throw new ResourceNotFoundException("Book","id", Long.parseLong(id) );
 		}
 		bookRepository.deleteById(id);
 

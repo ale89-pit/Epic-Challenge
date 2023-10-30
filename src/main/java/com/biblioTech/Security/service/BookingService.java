@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.biblioTech.Enum.MembershipCardState;
@@ -14,13 +13,10 @@ import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.entity.Booking;
 import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.entity.MembershipCard;
-import com.biblioTech.Security.exception.MyAPIException;
+import com.biblioTech.Security.exception.ResourceNotFoundException;
 import com.biblioTech.Security.payload.BookingDto;
 import com.biblioTech.Security.repository.BookingRepository;
-import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MembershipCardRepository;
-
-import jakarta.persistence.EntityExistsException;
 
 @Service
 public class BookingService {
@@ -106,7 +102,7 @@ public class BookingService {
 	public Booking updateBooking(Long id, BookingDto b) {
 
 		if (!bookingRepository.existsById(id)) {
-			throw new EntityExistsException("This booking does not exists");
+			throw new ResourceNotFoundException("Booking","id", id );
 		}
 		MembershipCard m = membershipCardRepository.findById(b.getCardId()).get();
 		Library l = m.getLibrary();
@@ -140,7 +136,7 @@ public class BookingService {
 
 	public Booking getBooking(Long id) {
 		if (!bookingRepository.existsById(id)) {
-			throw new EntityExistsException("This booking does not exists");
+			throw new ResourceNotFoundException("Booking","id", id );
 		}
 		return bookingRepository.findById(id).get();
 	}
@@ -155,7 +151,7 @@ public class BookingService {
 
 	public String deleteBooking(Long id) {
 		if (!bookingRepository.existsById(id)) {
-			throw new MyAPIException(HttpStatus.NOT_FOUND, "This booking does not exits");
+			throw new ResourceNotFoundException("Booking","id", id );
 		}
 		Booking booking = bookingRepository.findById(id).get();
 		MembershipCard m = membershipCardRepository.findById(booking.getCard().getId()).get();
