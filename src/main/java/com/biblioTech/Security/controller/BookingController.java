@@ -72,7 +72,7 @@ public class BookingController {
 				.body(new ResponseMessage("Membership card not accepted"));
 	}
 
-	@PostMapping("/{library_id}/{booking_id}")
+	@PostMapping("/accept/{library_id}/{booking_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> acceptBooking(@PathVariable Long library_id, @PathVariable Long booking_id,@RequestParam("endDate") LocalDate endDate) {
 		try {
@@ -105,10 +105,12 @@ public class BookingController {
 
 	}
 	
-	@PostMapping("/{library_id}/{booking_id}")
+	@PostMapping("/reject/{library_id}/{booking_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
 	public ResponseEntity<?> rejectBooking(@PathVariable Long id){
-		return null;
+		bookingService.rejectBooking(id);
+		
+		return ResponseEntity.ok(bookingService.getBooking(id));
 	}
 
 }
