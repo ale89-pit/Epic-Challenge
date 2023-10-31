@@ -23,6 +23,7 @@ public class BookingDto {
 
 	private String cardId;
 	private Set<String> books = new HashSet<String>();
+	private Set<Book> booksNotAvailable = new HashSet<Book>();
 	private LocalDate startDate;
 	private LocalDate endDate;
 	private LocalDate restitutionDate;

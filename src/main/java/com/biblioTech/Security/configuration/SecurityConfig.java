@@ -57,6 +57,7 @@ public class SecurityConfig {
 		http.cors().and().csrf().disable()
 				.authorizeHttpRequests((authorize) -> authorize.requestMatchers(mvc.pattern(HttpMethod.GET, "/api/**"))
 						.permitAll().requestMatchers(mvc.pattern("/api/auth/**")).permitAll()
+						.requestMatchers(mvc.pattern("/book/**")).permitAll()
 						.requestMatchers(mvc.pattern("/library/**")).hasRole("MODERATOR")
 						.requestMatchers(mvc.pattern("/user/**")).hasRole("USER")
 						.requestMatchers(mvc.pattern("/booking/**")).hasAnyRole("USER","MODERATOR")

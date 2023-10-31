@@ -258,4 +258,7 @@ public class LibraryService {
 		return "This library has been deleted";
 	}
 
+	public List<Library> getLibraryWithBookAvaible(String isbn){
+		return libraryRepository.findBookAvaibleInLibrary(isbn);
+	}
 }

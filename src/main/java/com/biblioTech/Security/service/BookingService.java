@@ -46,15 +46,18 @@ public class BookingService {
 				Integer quantity = entry.getValue();
 				
 				
-				if(book.getIsbn().equals(isbn) && (quantity>0)) {
-					System.out.println(book);
-					b.getBooks().add(book);
+				if(book.getIsbn().equals(isbn) ) {
+					if(quantity >0) {
+						System.out.println(book);
+						b.getBooks().add(book);
+						
+					}else {
+						bookingDto.getBooksNotAvailable().add(book);
+					}
 					
 					
 				}
-//				else {
-//					throw new EmitterException(book.getIsbn() +  book.getTitle() + " is out of the library ");
-//				}
+			
 				
 			} 
 		}
