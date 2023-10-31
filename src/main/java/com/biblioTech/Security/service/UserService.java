@@ -38,6 +38,8 @@ public class UserService {
 	public String updateUser(long id, UserDto userDto) {
 		if (userRepository.existsById(id)) {
 			User u = userRepository.findById(id).get();
+			System.out.println("user" + u.toString());
+			System.out.println("addressDto " + userDto);
 
 			if (userDto.getFullname() != null) {
 				u.setFullname(userDto.getFullname());
@@ -53,10 +55,16 @@ public class UserService {
 			if (userDto.getUsername() != null && userRepository.findByUsername(userDto.getUsername()).isEmpty()) {
 				u.setUsername(userDto.getUsername());
 			}
-			if (userDto.getAddressDto() != null) {
-				addressService.updateAddress(u.getAddress().getId(), userDto.getAddressDto());
-			}
 
+			if (userDto.getAddressDto() != null) {
+				if (u.getAddress() != null) {
+					addressService.updateAddress(u.getAddress().getId(), userDto.getAddressDto());
+
+				} else {
+					u.setAddress(addressService.saveAddress(userDto.getAddressDto()));
+
+				}
+			}
 			userRepository.save(u);
 			return "user updated succesfully";
 		}
