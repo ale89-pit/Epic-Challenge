@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.yaml.snakeyaml.emitter.EmitterException;
 
 import com.biblioTech.Enum.MembershipCardState;
 import com.biblioTech.Enum.State;
@@ -26,44 +25,39 @@ public class BookingService {
 	BookingRepository bookingRepository;
 
 	@Autowired
-	MembershipCardRepository  membershipCardRepository;
+	MembershipCardRepository membershipCardRepository;
 	@Autowired
 	LibraryService libraryService;
 
-	@SuppressWarnings("unlikely-arg-type")
 	public Booking saveBooking(BookingDto bookingDto) {
 		MembershipCard card = membershipCardRepository.findById(bookingDto.getCardId()).get();
 		if (card.getState().equals(MembershipCardState.APPROVED)) {
 			Booking b = new Booking();
-		Library l = card.getLibrary();
-		System.out.println(card);
-		System.out.println(l);
-		
-		for (String isbn : bookingDto.getBooks()) {
-			System.out.println(isbn);
-			for (Map.Entry <Book, Integer> entry : l.getBooklist().entrySet()) {
-				Book book = entry.getKey();
-				Integer quantity = entry.getValue();
-				
-				
-				if(book.getIsbn().equals(isbn) ) {
-					if(quantity >0) {
-						System.out.println(book);
-						b.getBooks().add(book);
-						
-					}else {
-						bookingDto.getBooksNotAvailable().add(book);
+			Library l = card.getLibrary();
+			System.out.println(card);
+			System.out.println(l);
+
+			for (String isbn : bookingDto.getBooks()) {
+				System.out.println(isbn);
+				for (Map.Entry<Book, Integer> entry : l.getBooklist().entrySet()) {
+					Book book = entry.getKey();
+					Integer quantity = entry.getValue();
+
+					if (book.getIsbn().equals(isbn)) {
+						if (quantity > 0) {
+							System.out.println(book);
+							b.getBooks().add(book);
+
+						} else {
+							bookingDto.getBooksNotAvailable().add(book);
+						}
+
 					}
-					
-					
+
 				}
-			
-				
-			} 
-		}
-		b.getBooks().forEach(book->System.out.println(book));
-		
-		
+			}
+			b.getBooks().forEach(book -> System.out.println(book));
+
 			b.setCard(card);
 			b.setState(State.PENDING);
 			b.setConfirmed(false);
@@ -75,16 +69,17 @@ public class BookingService {
 		}
 		return null;
 	}
-	
-	public Booking acceptBooking(Long id,LocalDate endDate) {
+
+	public Booking acceptBooking(Long id, LocalDate endDate) {
 		Booking b = bookingRepository.findById(id).get();
 		b.setConfirmed(true);
 		b.setStartDate(LocalDate.now());
 		b.setState(State.APPROVED);
 		b.setEndDate(endDate);
 		return bookingRepository.save(b);
-		
+
 	}
+
 	public Booking rejectBooking(Long id) {
 		Booking b = bookingRepository.findById(id).get();
 		Library l = b.getCard().getLibrary();
@@ -93,23 +88,25 @@ public class BookingService {
 		b.setEndDate(null);
 		libraryService.increaseBookQuantity(l.getId(), b.getBooks());
 		return bookingRepository.save(b);
-		
+
 	}
-	//TODO creare procedura automatica per settare lo stato in scaduto se endDate è minore di oggi
+
+	// TODO creare procedura automatica per settare lo stato in scaduto se endDate è
+	// minore di oggi
 	public Booking returnedBooking(Long id) {
 		Booking b = bookingRepository.findById(id).get();
 		Library l = b.getCard().getLibrary();
-		b.setState(State.RETURNED);  
+		b.setState(State.RETURNED);
 		b.setEndDate(LocalDate.now());
 		libraryService.increaseBookQuantity(l.getId(), b.getBooks());
 		return bookingRepository.save(b);
-		
+
 	}
 
 	public Booking updateBooking(Long id, BookingDto b) {
 
 		if (!bookingRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Booking","id", id );
+			throw new ResourceNotFoundException("Booking", "id", id);
 		}
 		MembershipCard m = membershipCardRepository.findById(b.getCardId()).get();
 		Library l = m.getLibrary();
@@ -126,24 +123,23 @@ public class BookingService {
 		if (b.getState() != null)
 			booking.setState(b.getState());
 		for (String isbn : b.getBooks()) {
-			for (Map.Entry <Book, Integer> entry : l.getBooklist().entrySet()) {
+			for (Map.Entry<Book, Integer> entry : l.getBooklist().entrySet()) {
 				Book book = entry.getKey();
 				Integer quantity = entry.getValue();
-				
-				if(book.equals(isbn)) {
+
+				if (book.getIsbn().equals(isbn)) {
 					booking.getBooks().add(book);
-					
-					
+
 				}
-				
-			} 
+
+			}
 		}
 		return bookingRepository.save(booking);
 	}
 
 	public Booking getBooking(Long id) {
 		if (!bookingRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Booking","id", id );
+			throw new ResourceNotFoundException("Booking", "id", id);
 		}
 		return bookingRepository.findById(id).get();
 	}
@@ -158,7 +154,7 @@ public class BookingService {
 
 	public String deleteBooking(Long id) {
 		if (!bookingRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Booking","id", id );
+			throw new ResourceNotFoundException("Booking", "id", id);
 		}
 		Booking booking = bookingRepository.findById(id).get();
 		MembershipCard m = membershipCardRepository.findById(booking.getCard().getId()).get();
