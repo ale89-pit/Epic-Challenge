@@ -3,8 +3,11 @@ package com.biblioTech.Security.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import com.biblioTech.Enum.Category;
 import com.biblioTech.Security.entity.Book;
 import com.biblioTech.Security.exception.ResourceNotFoundException;
 import com.biblioTech.Security.payload.BookDto;
@@ -56,10 +59,16 @@ public class BookService {
 		return bookRepository.findById(id).get();
 	}
 
-	public List<Book> getAllBooks() {
-		return bookRepository.findAll();
+	public Page<Book> getAllBooks(Pageable pageable) {
+		Page<Book> result = bookRepository.findAll(pageable);
+		return result;
 	}
 
+	public Page<Book>getBookFromCategory(Category category,Pageable pageable){
+		Page<Book> result = bookRepository.findByCategory(category,pageable);
+		return result;
+		
+	}
 	public String deleteBook(String id) {
 		if (!bookRepository.existsById(id)) {
 			throw new ResourceNotFoundException("Book","id", Long.parseLong(id) );
