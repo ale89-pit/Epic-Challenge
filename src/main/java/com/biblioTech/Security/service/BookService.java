@@ -64,6 +64,10 @@ public class BookService {
 		return result;
 	}
 
+	public List<Book> gettAllBooks(){
+		return bookRepository.findAll();
+	}
+	
 	public Page<Book>getBookFromCategory(Category category,Pageable pageable){
 		Page<Book> result = bookRepository.findByCategory(category,pageable);
 		return result;
