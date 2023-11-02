@@ -249,6 +249,10 @@ public class LibraryService {
 		return libraryRepository.findAll();
 	}
 
+	public Library getLibraryByEmail(String email) {
+		return libraryRepository.findByEmail(email).get();
+	}
+	
 	public String deleteLibrary(Long id) {
 		if (!libraryRepository.existsById(id)) {
 			throw new ResourceNotFoundException("Library","id", id );

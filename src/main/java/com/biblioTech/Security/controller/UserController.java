@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioTech.Security.payload.UserDto;
+import com.biblioTech.Security.service.LibraryService;
 import com.biblioTech.Security.service.UserService;
 
 @RestController
@@ -21,6 +22,8 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	@Autowired
+	LibraryService libraryService;
 
 	// metodo per aggiornare anche solo unn campo dell'utente Dto
 	@PutMapping("/{user_id}")
@@ -33,6 +36,12 @@ public class UserController {
 	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR')")
 	public ResponseEntity<?> findByUsernameOrEmail(@PathVariable String username,@PathVariable String email){
 		return ResponseEntity.ok(userService.findByUsernameOrEmail(username, email)) ;
+		
+	}
+	@GetMapping("/{email}")
+	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR')")
+	public ResponseEntity<?> findByEmail(@PathVariable String email){
+		return ResponseEntity.ok(libraryService.getLibraryByEmail(email)) ;
 		
 	}
 
