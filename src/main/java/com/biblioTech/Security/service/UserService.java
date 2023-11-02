@@ -92,7 +92,7 @@ public class UserService {
 
 	
 	public Object findByUsernameOrEmail(String username,String email) {
-		if(userRepository.existsByEmail(email)) {
+		if(userRepository.existsByEmail(email)|| userRepository.existsByUsername(username)) {
 			return userRepository.findByUsernameOrEmail(username, email).get();
 			
 		}else {
