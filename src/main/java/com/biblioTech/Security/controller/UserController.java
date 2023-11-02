@@ -30,7 +30,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/{username}/{email}")
-	@PreAuthorize("hasRole('USER') or hasRole('MODERATORE')")
+	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR')")
 	public ResponseEntity<?> findByUsernameOrEmail(@PathVariable String username,@PathVariable String email){
 		return ResponseEntity.ok(userService.findByUsernameOrEmail(username, email)) ;
 		
