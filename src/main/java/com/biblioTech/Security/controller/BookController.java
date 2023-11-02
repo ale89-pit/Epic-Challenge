@@ -34,6 +34,10 @@ public class BookController {
 	public ResponseEntity<?> getAllBook(Pageable pageable){
 		return ResponseEntity.ok(bookService.getAllBooks(pageable));
 	}
+	@GetMapping("/allT")
+	public ResponseEntity<?> getAllBook(){
+		return ResponseEntity.ok(bookService.gettAllBooks());
+	}
 	
 	@GetMapping("/bookInLibrary/{isbn}")
 	public ResponseEntity<?>getLibraryWithBook(@PathVariable String isbn){

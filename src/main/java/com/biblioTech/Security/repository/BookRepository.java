@@ -14,6 +14,7 @@ import com.biblioTech.Enum.Category;
 @Repository
 public interface BookRepository extends JpaRepository<Book, String>,PagingAndSortingRepository<Book,String>{
 	
+	List<Book> findAll();
 	Page<Book> findAll(Pageable pageable);
 	Page<Book> findByCategory(Category category,Pageable pageable);
 
