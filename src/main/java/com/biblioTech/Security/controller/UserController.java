@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,13 @@ public class UserController {
 	@PreAuthorize("hasRole('USER')")
 	public ResponseEntity<String> updateUser(@PathVariable long user_id, @RequestBody UserDto userToUpdate) {
 		return ResponseEntity.ok(userService.updateUser(user_id, userToUpdate));
+	}
+	
+	@GetMapping("/{username}/{email}")
+	@PreAuthorize("hasRole('USER') or hasRole('MODERATORE')")
+	public ResponseEntity<?> findByUsernameOrEmail(@PathVariable String username,@PathVariable String email){
+		return ResponseEntity.ok(userService.findByUsernameOrEmail(username, email)) ;
+		
 	}
 
 }

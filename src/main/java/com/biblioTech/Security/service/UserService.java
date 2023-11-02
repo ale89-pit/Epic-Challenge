@@ -87,4 +87,8 @@ public class UserService {
 //	u.setAddress(address);
 //	addressRepository.save(address);
 
+	
+	public User findByUsernameOrEmail(String username,String email) {
+		return userRepository.findByUsernameOrEmail(username, email).get();
+	}
 }
