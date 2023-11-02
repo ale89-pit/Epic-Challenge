@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.biblioTech.Security.entity.User;
 import com.biblioTech.Security.payload.UserDto;
 import com.biblioTech.Security.repository.AddressRepository;
+import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 import com.biblioTech.Security.repository.UserRepository;
 
@@ -17,6 +18,8 @@ public class UserService {
 
 	@Autowired
 	AddressService addressService;
+	@Autowired
+	LibraryService libraryService;
 
 	@Autowired
 	AddressRepository addressRepository;
@@ -88,7 +91,13 @@ public class UserService {
 //	addressRepository.save(address);
 
 	
-	public User findByUsernameOrEmail(String username,String email) {
-		return userRepository.findByUsernameOrEmail(username, email).get();
+	public Object findByUsernameOrEmail(String username,String email) {
+		if(userRepository.existsByEmail(email)) {
+			return userRepository.findByUsernameOrEmail(username, email).get();
+			
+		}else {
+			return	libraryService.getLibraryByEmail(email);
+			
+		}
 	}
 }

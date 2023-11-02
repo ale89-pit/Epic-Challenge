@@ -38,11 +38,6 @@ public class UserController {
 		return ResponseEntity.ok(userService.findByUsernameOrEmail(username, email)) ;
 		
 	}
-	@GetMapping("/{email}")
-	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR')")
-	public ResponseEntity<?> findByEmail(@PathVariable String email){
-		return ResponseEntity.ok(libraryService.getLibraryByEmail(email)) ;
-		
-	}
+
 
 }
