@@ -20,6 +20,7 @@ import com.biblioTech.Security.exception.ResourceNotFoundException;
 import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
+import com.biblioTech.Security.repository.AddressRepository;
 import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
@@ -44,6 +45,8 @@ public class LibraryService {
 	EntityManager entityManager;
 	@Autowired
 	AddressService addressService;
+	@Autowired
+	AddressRepository addressRepository;
 
 	public String addAddressToLibrary(long id, AddressDto a) {
 		try {
@@ -232,9 +235,14 @@ public class LibraryService {
 		if (l.getEmail() != null)
 			library.setEmail(l.getEmail());
 
-		if (l.getAddress() != null)
-			addressService.updateAddress(library.getAddress().getId(), l.getAddress());
-
+		if (l.getAddressDto() != null)
+			if(library.getAddress()!= null) {
+			addressService.updateAddress(library.getAddress().getId(), l.getAddressDto());
+			}else {
+				Address a = addressService.saveAddress(l.getAddressDto());
+				System.out.println(a);
+				library.setAddress(a);
+			}
 		if (l.getPhone() != null)
 			library.setPhone(l.getPhone());
 

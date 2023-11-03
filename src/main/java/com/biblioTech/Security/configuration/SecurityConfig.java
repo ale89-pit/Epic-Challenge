@@ -59,6 +59,8 @@ public class SecurityConfig {
 						.permitAll().requestMatchers(mvc.pattern("/api/auth/**")).permitAll()
 						.requestMatchers(mvc.pattern("/book/**")).permitAll()
 						.requestMatchers(mvc.pattern("/library/**")).hasRole("MODERATOR")
+						.requestMatchers(mvc.pattern("/province/**")).hasAnyRole("USER","MODERATOR")
+						.requestMatchers(mvc.pattern("/municipality/**")).hasAnyRole("USER","MODERATOR")
 						.requestMatchers(mvc.pattern("/user/**")).hasAnyRole("USER","MODERATOR")
 						.requestMatchers(mvc.pattern("/booking/**")).hasAnyRole("USER","MODERATOR")
 						.anyRequest().authenticated())

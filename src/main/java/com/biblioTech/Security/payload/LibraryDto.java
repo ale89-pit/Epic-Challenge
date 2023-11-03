@@ -17,7 +17,7 @@ public class LibraryDto {
 
 	private String name;
 
-	private AddressDto address;
+	private AddressDto addressDto;
 
 	private String email;
 

@@ -48,7 +48,7 @@ public class User {
 	private String password;
 
 	@Column
-	private Long phone;
+	private String phone;
 
 	@OneToOne
 	private Address address;
