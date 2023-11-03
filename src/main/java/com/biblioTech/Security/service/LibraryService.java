@@ -263,6 +263,6 @@ public class LibraryService {
 	}
 
 	public List<Library> getLibraryWithBookAvaible(String isbn){
-		return libraryRepository.findBookAvaibleInLibrary(isbn);
+		return libraryRepository.findBookAvaibleInLibrary(bookRepository.findById(isbn).get());
 	}
 }

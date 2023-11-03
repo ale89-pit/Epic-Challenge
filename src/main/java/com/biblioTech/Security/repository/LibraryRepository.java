@@ -21,7 +21,8 @@ public interface LibraryRepository extends JpaRepository<Library, Long> {
 	Boolean existsByEmail(String email);
 
 	//	SELECT * FROM library where id IN(SELECT library_id FROM library_books where isbn='9788867905348');
-	@Query("SELECT l FROM Library l JOIN l.booklist bl WHERE KEY(bl) = :isbn AND VALUE(bl)>0")
-	List<Library> findBookAvaibleInLibrary(@Param("isbn") String isbn);
+	//@Query("SELECT l FROM Library l JOIN l.booklist bl WHERE KEY(bl) = :isbn AND VALUE(bl)>0")
+	@Query("SELECT l FROM Library l JOIN l.booklist b WHERE KEY(b) = :isbn")
+	List<Library> findBookAvaibleInLibrary(@Param("isbn") Book isbn);
 
 }

@@ -34,11 +34,16 @@ public class BookController {
 	public ResponseEntity<?> getAllBook(Pageable pageable){
 		return ResponseEntity.ok(bookService.getAllBooks(pageable));
 	}
+	
+	@GetMapping("/{isbn}")
+	public ResponseEntity<?> getBookById(@PathVariable String isbn){
+		return ResponseEntity.ok(bookService.getBook(isbn));
+	}
 	@GetMapping("/allT")
 	public ResponseEntity<?> getAllBook(){
 		return ResponseEntity.ok(bookService.gettAllBooks());
 	}
-	
+	//TODO questo metodo non funziona
 	@GetMapping("/bookInLibrary/{isbn}")
 	public ResponseEntity<?>getLibraryWithBook(@PathVariable String isbn){
 		return ResponseEntity.ok(libraryService.getLibraryWithBookAvaible(isbn));
