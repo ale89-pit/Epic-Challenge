@@ -29,10 +29,10 @@ public class MembershipCardService {
 	UserRepository userRepository;
 
 	public MembershipCard saveMembershipCard(MembershipCardDto c) {
-		
+
 		if (userRepository.existsByUsername(c.getUsername())) {
 			User u = userRepository.findByUsername(c.getUsername()).get();
-			if(!u.getIsActive())
+			if (!u.getIsActive())
 				throw new EntityExistsException(u.getUsername() + " not active");
 			if (libraryRepository.existsById(c.getLibraryId())) {
 				Library l = libraryRepository.findById(c.getLibraryId()).get();
@@ -46,14 +46,14 @@ public class MembershipCardService {
 
 				throw new EntityExistsException(u.getUsername() + " alredy has a card on library " + l.getName());
 			}
-			throw new ResourceNotFoundException("Library","id", c.getLibraryId());
+			throw new ResourceNotFoundException("Library", "id", c.getLibraryId());
 		}
-		throw new ResourceNotFoundException("User","username", c.getUsername());
+		throw new ResourceNotFoundException("User", "username", c.getUsername());
 	}
 
 	public MembershipCard updateMembershipCard(String id, MembershipCardDto c) {
 		if (!membershipCardRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(id));
 		}
 		MembershipCard card = membershipCardRepository.findById(id).get();
 
@@ -61,7 +61,7 @@ public class MembershipCardService {
 			if (libraryRepository.findById(c.getLibraryId()).isPresent())
 				card.setLibrary(libraryRepository.findById(c.getLibraryId()).get());
 			else
-				throw new ResourceNotFoundException("Library","id", c.getLibraryId());
+				throw new ResourceNotFoundException("Library", "id", c.getLibraryId());
 
 		if (c.getState() != null)
 			card.setState(c.getState());
@@ -77,7 +77,7 @@ public class MembershipCardService {
 
 	public MembershipCard acceptCard(String card_id, LocalDate endDate) {
 		if (!membershipCardRepository.existsById(card_id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(card_id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(card_id));
 		} else {
 			MembershipCard m = membershipCardRepository.findById(card_id).get();
 			m.setState(MembershipCardState.APPROVED);
@@ -92,7 +92,7 @@ public class MembershipCardService {
 	// meno la tessera
 	public MembershipCard rejectCard(String card_id) {
 		if (!membershipCardRepository.existsById(card_id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(card_id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(card_id));
 		} else {
 			MembershipCard m = membershipCardRepository.findById(card_id).get();
 			m.setState(MembershipCardState.REJECTED);
@@ -104,7 +104,7 @@ public class MembershipCardService {
 
 	public MembershipCard blockCard(String card_id) {
 		if (!membershipCardRepository.existsById(card_id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(card_id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(card_id));
 		} else {
 
 			MembershipCard m = membershipCardRepository.findById(card_id).get();
@@ -113,7 +113,7 @@ public class MembershipCardService {
 				return membershipCardRepository.save(m);
 
 			}
-			//TODO cambiato da entityExistException a RuntimeException
+			// TODO cambiato da entityExistException a RuntimeException
 			throw new RuntimeException("This card is not approved, you can't block card");
 		}
 
@@ -121,7 +121,7 @@ public class MembershipCardService {
 
 	public MembershipCard restoreCard(String card_id) {
 		if (!membershipCardRepository.existsById(card_id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(card_id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(card_id));
 		} else {
 			MembershipCard m = membershipCardRepository.findById(card_id).get();
 			m.setBlacklist(false);
@@ -132,7 +132,7 @@ public class MembershipCardService {
 
 	public MembershipCard renewalCard(String card_id, LocalDate endDate) {
 		if (!membershipCardRepository.existsById(card_id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(card_id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(card_id));
 		} else {
 			MembershipCard m = membershipCardRepository.findById(card_id).get();
 			m.setStartDate(LocalDate.now());
@@ -146,8 +146,13 @@ public class MembershipCardService {
 		return membershipCardRepository.findById(id).get();
 	}
 
-	public List<MembershipCard> getMembershipCardsByLibrary(Library l) {
-		return membershipCardRepository.findByLibrary(l);
+	public List<MembershipCard> getMembershipCardsByLibrary(Long libId) {
+		if (!libraryRepository.existsById(libId))
+			throw new ResourceNotFoundException("Library", "id", libId);
+
+		Library library = libraryRepository.findById(libId).get();
+		return membershipCardRepository.findByLibrary(library);
+
 	}
 
 	public List<MembershipCard> getMembershipCardsByLibraryAndState(Library l, MembershipCardState s) {
@@ -171,7 +176,7 @@ public class MembershipCardService {
 
 	public String deleteMembershipCard(String id) {
 		if (!membershipCardRepository.existsById(id)) {
-			throw new ResourceNotFoundException("Card","id", Long.parseLong(id));
+			throw new ResourceNotFoundException("Card", "id", Long.parseLong(id));
 		}
 		membershipCardRepository.deleteById(id);
 

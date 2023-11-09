@@ -39,6 +39,12 @@ public class MembershipCardController {
 		return membershipCardService.getMembershipCardsByUserId(user_id);
 	}
 
+	@GetMapping("/allByLibrary/{library_id}")
+	@PreAuthorize("hasRole('MODERATOR')")
+	public List<MembershipCard> getAllMembershipCardsByLibrary(@PathVariable Long library_id) {
+		return membershipCardService.getMembershipCardsByLibrary(library_id);
+	}
+
 	@PutMapping("/accept/{card_id}")
 	@PreAuthorize("hasRole('MODERATOR')")
 	public MembershipCard acceptCard(@PathVariable String card_id, @RequestParam("endDate") LocalDate endDate) {
