@@ -22,7 +22,7 @@ public interface LibraryRepository extends JpaRepository<Library, Long> {
 
 	//	SELECT * FROM library where id IN(SELECT library_id FROM library_books where isbn='9788867905348');
 	//@Query("SELECT l FROM Library l JOIN l.booklist bl WHERE KEY(bl) = :isbn AND VALUE(bl)>0")
-	@Query("SELECT l FROM Library l JOIN l.booklist b WHERE KEY(b) = :isbn")
+	@Query("SELECT l FROM Library l JOIN l.booklist b WHERE KEY(b) = :isbn AND VALUE(b) >0")
 	List<Library> findBookAvaibleInLibrary(@Param("isbn") Book isbn);
 
 }

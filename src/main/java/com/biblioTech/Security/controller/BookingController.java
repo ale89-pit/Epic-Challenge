@@ -104,17 +104,31 @@ public class BookingController {
 
 	}
 
-	@PostMapping("/reject/{library_id}/{booking_id}")
+	@PostMapping("/reject/{booking_id}")
 	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-	public ResponseEntity<?> rejectBooking(@PathVariable Long id) {
+	public ResponseEntity<?> rejectBooking(@PathVariable Long booking_id) {
 		try {
-			bookingService.rejectBooking(id);
-			return ResponseEntity.ok(bookingService.getBooking(id));
+			bookingService.rejectBooking(booking_id);
+			return ResponseEntity.ok(bookingService.getBooking(booking_id));
 
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage(e.getMessage()));
 		}
 
 	}
+	@PostMapping("/return/{booking_id}")
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	public ResponseEntity<?> returnBooking(@PathVariable Long booking_id){
+		try {
+			bookingService.returnedBooking(booking_id);
+			return ResponseEntity.ok(bookingService.getBooking(booking_id));
+		}
+		catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage(e.getMessage()));
+					
+		}
+		
+	}
+	
 
 }

@@ -86,6 +86,7 @@ public class BookingService {
 		b.setStartDate(null);
 		b.setState(State.REJECTED);
 		b.setEndDate(null);
+		b.setConfirmed(false);
 		libraryService.increaseBookQuantity(l.getId(), b.getBooks());
 		return bookingRepository.save(b);
 
