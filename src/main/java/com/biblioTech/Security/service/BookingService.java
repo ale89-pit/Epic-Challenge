@@ -92,8 +92,6 @@ public class BookingService {
 
 	}
 
-	// TODO creare procedura automatica per settare lo stato in scaduto se endDate è
-	// minore di oggi
 	public Booking returnedBooking(Long id) {
 		Booking b = bookingRepository.findById(id).get();
 		Library l = b.getCard().getLibrary();

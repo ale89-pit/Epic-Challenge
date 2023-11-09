@@ -1,5 +1,8 @@
 package com.biblioTech.Security.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -18,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.biblioTech.Security.entity.Book;
+import com.biblioTech.Security.entity.Library;
 import com.biblioTech.Security.payload.AddressDto;
 import com.biblioTech.Security.payload.BookDto;
 import com.biblioTech.Security.payload.LibraryDto;
@@ -118,6 +123,20 @@ public class LibraryController {
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> deleteLibrary(@PathVariable Long library_id) {
 		return ResponseEntity.ok(libraryService.deleteLibrary(library_id));
+	}
+
+	@GetMapping("/{library_id}/allBooks")
+	public ResponseEntity<?> allBooksByLibraryId(@PathVariable Long library_id) {
+		Library lib = libraryService.getLibraryById(library_id);
+		Map<Book, Integer> bookList = lib.getBooklist();
+		Map<String, Integer> bookListString = new HashMap<String, Integer>();
+
+		for (Map.Entry<Book, Integer> entry : bookList.entrySet()) {
+			Book b = entry.getKey();
+			Integer qnty = entry.getValue();
+			bookListString.put(b.getIsbn(), qnty);
+		}
+		return ResponseEntity.ok(bookListString);
 	}
 
 }
