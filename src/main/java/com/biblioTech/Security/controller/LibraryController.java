@@ -1,6 +1,7 @@
 package com.biblioTech.Security.controller;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ import com.biblioTech.Security.repository.FileDataRepository;
 import com.biblioTech.Security.service.FileDataService;
 import com.biblioTech.Security.service.LibraryService;
 import com.biblioTech.message.ResponseMessage;
+
+import lombok.Data;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -126,17 +129,30 @@ public class LibraryController {
 	}
 
 	@GetMapping("/{library_id}/allBooks")
-	public ResponseEntity<?> allBooksByLibraryId(@PathVariable Long library_id) {
+	public ResponseEntity<List<BookQuantity>> allBooksByLibraryId(@PathVariable Long library_id) {
 		Library lib = libraryService.getLibraryById(library_id);
-		Map<Book, Integer> bookList = lib.getBooklist();
-		Map<String, Integer> bookListString = new HashMap<String, Integer>();
+		Map<Book, Integer> bookMap = lib.getBooklist();
+		List<BookQuantity> bookList = new ArrayList<BookQuantity>();
 
-		for (Map.Entry<Book, Integer> entry : bookList.entrySet()) {
+		for (Map.Entry<Book, Integer> entry : bookMap.entrySet()) {
 			Book b = entry.getKey();
 			Integer qnty = entry.getValue();
-			bookListString.put(b.getIsbn(), qnty);
+			BookQuantity bq = new BookQuantity(b, qnty);
+			bookList.add(bq);
 		}
-		return ResponseEntity.ok(bookListString);
+		return ResponseEntity.ok(bookList);
+	}
+
+	@Data
+	private class BookQuantity {
+		private Book book;
+		private Integer quantity;
+
+		public BookQuantity(Book b, Integer qnty) {
+			this.book = b;
+			this.quantity = qnty;
+		}
+
 	}
 
 }
