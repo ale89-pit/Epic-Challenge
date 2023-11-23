@@ -2,8 +2,11 @@ package com.biblioTech.Security.repository;
 
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -14,8 +17,21 @@ import java.util.Map;
 
 
 @Repository
-public interface LibraryRepository extends JpaRepository<Library, Long> {
+public interface LibraryRepository extends JpaRepository<Library, Long>,PagingAndSortingRepository<Library, Long> {
 
+	Page<Library> findAll(Pageable pageable);
+	
+	@Query(value="SELECT l.*\r\n"
+			+ "FROM library l\r\n"
+			+ "JOIN address a ON l.address_id = a.id\r\n"
+			+ "WHERE\r\n"
+			+ "  6371 * ACOS(\r\n"
+			+ "    SIN(RADIANS(CAST(REPLACE(:latitudine,',','.')as double precision))) * SIN(RADIANS(CAST(REPLACE(a.lat, ',', '.')as double precision))) +\r\n"
+			+ "    COS(RADIANS(CAST(REPLACE(:latitudine,',','.')as double precision))) * COS(RADIANS(CAST(REPLACE(a.lat,',', '.') as double precision))) *\r\n"
+			+ "    COS(RADIANS(CAST(REPLACE(a.lon, ',', '.') as double precision)) - RADIANS(CAST(REPLACE(:longitudine,',','.')as double precision)))\r\n"
+			+ "  ) <= 100;", nativeQuery=true)
+	List<Library> findLibraryByGeolocalization(@Param("latitudine") String latitudine,@Param("longitudine") String lon);
+	
 	Optional<Library> findByEmail(String email);
 
 	Boolean existsByEmail(String email);

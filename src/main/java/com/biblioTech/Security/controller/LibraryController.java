@@ -1,11 +1,13 @@
 package com.biblioTech.Security.controller;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -48,6 +50,15 @@ public class LibraryController {
 	@GetMapping("/all")
 	public ResponseEntity<?> allLibraries() {
 		return ResponseEntity.ok(libraryService.getAllLibraries());
+	}
+	@GetMapping("/allL")
+	public ResponseEntity<?> allLibraries(Pageable pageable) {
+		return ResponseEntity.ok(libraryService.getAllLibraries(pageable));
+	}
+	@GetMapping("/all/byGeo")
+	public ResponseEntity<?> allLibrariesByGeocoding(@RequestParam String lat,@RequestParam String lon) {
+		
+		return ResponseEntity.ok(libraryService.getLibrariesByGeocoding(lat,lon));
 	}
 
 	@GetMapping("/{library_id}")

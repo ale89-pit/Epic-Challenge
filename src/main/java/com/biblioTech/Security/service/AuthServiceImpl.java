@@ -230,4 +230,35 @@ public class AuthServiceImpl implements AuthService {
 			return ERole.ROLE_USER;
 	}
 
+	@Override
+	public Library registerLibraryByRunner(RegisterDto registerDto) {
+		if (libraryRepository.existsByEmail(registerDto.getEmail())) {
+			throw new MyAPIException(HttpStatus.BAD_REQUEST, "Email is already exists!.");
+		}
+		if (userRepository.existsByEmail(registerDto.getEmail())) {
+			throw new MyAPIException(HttpStatus.BAD_REQUEST, "Email is already exists!.");
+		}
+
+		Library library = new Library();
+		library.setName(registerDto.getName());
+		library.setEmail(registerDto.getEmail());
+		library.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+
+		Set<Role> roles = new HashSet<>();
+
+		if (registerDto.getRoles() != null) {
+			registerDto.getRoles().forEach(role -> {
+				Role userRole = roleRepository.findByRoleName(getRole(role)).get();
+				roles.add(userRole);
+			});
+		} else {
+			Role userRole = roleRepository.findByRoleName(ERole.ROLE_MODERATOR).get();
+			roles.add(userRole);
+		}
+
+		library.setRoles(roles);
+		System.out.println(library);
+		return libraryRepository.save(library);
+	}
+
 }

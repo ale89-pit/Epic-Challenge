@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.biblioTech.Enum.Category;
@@ -255,6 +257,14 @@ public class LibraryService {
 
 	public List<Library> getAllLibraries() {
 		return libraryRepository.findAll();
+	}
+	
+	public List<Library> getLibrariesByGeocoding(String lat,String lon) {
+		return libraryRepository.findLibraryByGeolocalization(lat,lon);
+	}
+	public Page<Library> getAllLibraries(Pageable pageable) {
+		Page<Library> result = libraryRepository.findAll(pageable);
+		return result;
 	}
 
 	public Library getLibraryByEmail(String email) {

@@ -1,11 +1,30 @@
 package com.biblioTech.Security.runner;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.biblioTech.Enum.Category;
+import com.biblioTech.Enum.ERole;
+import com.biblioTech.Enum.Languages;
+import com.biblioTech.Security.entity.Address;
+import com.biblioTech.Security.entity.Book;
+import com.biblioTech.Security.entity.Library;
+import com.biblioTech.Security.entity.Municipality;
+import com.biblioTech.Security.entity.Province;
+import com.biblioTech.Security.entity.Role;
+import com.biblioTech.Security.payload.RegisterDto;
 import com.biblioTech.Security.repository.AddressRepository;
 import com.biblioTech.Security.repository.BookRepository;
 import com.biblioTech.Security.repository.BookingRepository;
@@ -13,11 +32,18 @@ import com.biblioTech.Security.repository.LibraryRepository;
 import com.biblioTech.Security.repository.MembershipCardRepository;
 import com.biblioTech.Security.repository.MunicipalityRepository;
 import com.biblioTech.Security.repository.ProvinceRepository;
+import com.biblioTech.Security.repository.RoleRepository;
 import com.biblioTech.Security.repository.UserRepository;
+import com.biblioTech.Security.service.AuthService;
 import com.biblioTech.Security.service.BookService;
 import com.biblioTech.Security.service.DatabaseUpdateService;
 import com.biblioTech.Security.service.FileDataService;
 import com.biblioTech.Security.service.LibraryService;
+
+import jakarta.persistence.EntityExistsException;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 
 @Component
 @Order(3)
@@ -45,10 +71,12 @@ public class provaInserimento implements ApplicationRunner {
 	BookRepository bookRepository;
 	@Autowired
 	FileDataService fileDataService;
-
+	@Autowired RoleRepository roleRepository;
 	@Autowired
 	DatabaseUpdateService databaseUpdateService;
 
+	@Autowired AuthService authService;
+	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
@@ -165,7 +193,103 @@ public class provaInserimento implements ApplicationRunner {
 
 		// aggiornamento data scadenza
 		databaseUpdateService.updateBookingState();
+//		addLibraryFromFile("territorio.csv");
+	}
+	
+	
+	public String addLibraryFromFile(String filename) {
+		
+		BufferedReader brList;
+		String folder = System.getProperty("user.dir");
+		System.out.println(filename);
+		try {
+			brList = new BufferedReader(
+					new FileReader(folder + "/src/main/resources/csvFiles/" + filename, StandardCharsets.UTF_8));
+			String lineBook;
+			System.out.println(brList);
+			int line = 0;
+			boolean firstLine = true;
+			while ((lineBook = brList.readLine()) != null) {
+				if (firstLine) {
+					// Skip the first line
+					firstLine = false;
+					line++;
+					continue;
+				}
+				line++;
+				if(line>13000) {
+					
+				
+				String[] values = lineBook.split(";");
+				System.out.println(values.length);
+				for(String s :values) {
+					System.out.println(s + "**********");
+				}
+				
+				Address a = new Address();
+				String[] parti = values[3].split("(?<=\\D)(?=\\d)");
+				System.out.println(parti+ "************");
+//				for(String s :parti) {
+//					System.out.println(s + "**********");
+//				}
+				 if(parti.length > 1) {
+					
+					 a.setStreet(parti[0].replaceAll("\"",""));
+					 a.setNumber(parti[1].replaceAll("\"",""));
+				 }else {
+					 a.setStreet(values[3].replaceAll("\"",""));
+					 a.setNumber("snc");
+					 
+				 }
+				 a.setLat(values[11].replaceAll("\"",""));
+				 a.setLon(values[12].replaceAll("\"",""));
+				 Province p = provinceRepository.findByName(values[8].replaceAll("\"",""));
+				Municipality m = municipalityRepository.findByProvince(p).stream().filter( m1 -> m1.getName().toUpperCase().equals(values[6]. replaceAll("\"","").toUpperCase())).findFirst().orElse(null);
+				a.setMunicipality(m);
+				addressRepository.saveAndFlush(a);
+				
+				
+				RegisterDto register = new RegisterDto();
+				
+				
+				if(values.length > 15 && !values[15].isBlank() ) {
+					
+						register.setEmail(values[15].replaceAll("\"",""));
+						
+				}else {
+					register.setEmail("email@prova" + line +".it");
+				}
+				
+				register.setName(values[2].replaceAll("\"",""));
+				register.setPassword("qwert");
+				
+				Library l = authService.registerLibraryByRunner(register);
+				
+				l.setIsActive(true);
+				l.setPhone(values[13].replaceAll("\"",""));
+			
+				// Data publicazione libro
+				Address salvato = addressRepository.findByLatAndLonAndStreet(values[11].replaceAll("\"",""),values[12].replaceAll("\"",""),a.getStreet());
+				
+				System.out.println(l + "************ libray");
+				
+				
+				l.setAddress(salvato);
+				libraryRepository.save(l);
+				
 
+				line++;
+				
+			}
+			}
+			brList.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+
+		}
+		
+		return "file letto";
 	}
 
 }
