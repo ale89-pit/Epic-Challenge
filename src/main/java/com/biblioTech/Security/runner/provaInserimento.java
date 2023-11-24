@@ -194,6 +194,7 @@ public class provaInserimento implements ApplicationRunner {
 		// aggiornamento data scadenza
 		databaseUpdateService.updateBookingState();
 //		addLibraryFromFile("territorio.csv");
+//		addLibraryFromFile("territorioFiltrato3.csv");
 	}
 	
 	
@@ -217,65 +218,82 @@ public class provaInserimento implements ApplicationRunner {
 					continue;
 				}
 				line++;
-				if(line>13000) {
+				if(line>1) {
 					
 				
 				String[] values = lineBook.split(";");
+				System.out.println(values.length);
+				System.out.println(values[0]);
+				System.out.println(values[1]);
+				System.out.println(values[2]);
+				System.out.println(values[3]);
+				System.out.println(values[4]);
+				System.out.println(values[5]);
+				System.out.println(values[6]);
+				System.out.println(values[7]);
+				System.out.println(values[8]);
+				System.out.println(values[9]);
+				System.out.println(values[10]);
+				if(libraryRepository.existsByEmail(values[10].replaceAll("\"",""))) {
+					line++;
+					continue;
+				}
 				System.out.println(values.length);
 				for(String s :values) {
 					System.out.println(s + "**********");
 				}
 				
-				Address a = new Address();
-				String[] parti = values[3].split("(?<=\\D)(?=\\d)");
-				System.out.println(parti+ "************");
-//				for(String s :parti) {
-//					System.out.println(s + "**********");
-//				}
-				 if(parti.length > 1) {
-					
-					 a.setStreet(parti[0].replaceAll("\"",""));
-					 a.setNumber(parti[1].replaceAll("\"",""));
-				 }else {
-					 a.setStreet(values[3].replaceAll("\"",""));
-					 a.setNumber("snc");
-					 
-				 }
-				 a.setLat(values[11].replaceAll("\"",""));
-				 a.setLon(values[12].replaceAll("\"",""));
-				 Province p = provinceRepository.findByName(values[8].replaceAll("\"",""));
-				Municipality m = municipalityRepository.findByProvince(p).stream().filter( m1 -> m1.getName().toUpperCase().equals(values[6]. replaceAll("\"","").toUpperCase())).findFirst().orElse(null);
-				a.setMunicipality(m);
-				addressRepository.saveAndFlush(a);
+				
 				
 				
 				RegisterDto register = new RegisterDto();
 				
 				
-				if(values.length > 15 && !values[15].isBlank() ) {
+				if(!values[10].isBlank() ) {
 					
-						register.setEmail(values[15].replaceAll("\"",""));
+						register.setEmail(values[10].replaceAll("\"",""));
 						
 				}else {
 					register.setEmail("email@prova" + line +".it");
 				}
 				
-				register.setName(values[2].replaceAll("\"",""));
+				register.setName(values[0].replaceAll("\"",""));
 				register.setPassword("qwert");
 				
 				Library l = authService.registerLibraryByRunner(register);
 				
-				l.setIsActive(true);
-				l.setPhone(values[13].replaceAll("\"",""));
+				if(l!= null) {
+					l.setIsActive(true);
+					l.setPhone(values[9].replaceAll("\"",""));
+					
+					Address a = new Address();
+					String[] parti = values[1].split("(?<=\\D)(?=\\d)");
+					System.out.println(parti+ "************");
+//				for(String s :parti) {
+//					System.out.println(s + "**********");
+//				}
+					if(parti.length > 1) {
+						
+						a.setStreet(parti[0].replaceAll("\"",""));
+						a.setNumber(parti[1].replaceAll("\"",""));
+					}else {
+						a.setStreet(values[1].replaceAll("\"",""));
+						a.setNumber("snc");
+						
+					}
+					a.setLat(values[7].replaceAll("\"",""));
+					a.setLon(values[8].replaceAll("\"",""));
+					Province p = provinceRepository.findByName(values[4].replaceAll("\"",""));
+					Municipality m = municipalityRepository.findByProvince(p).stream().filter( m1 -> m1.getName().toUpperCase().equals(values[2]. replaceAll("\"","").toUpperCase())).findFirst().orElse(null);
+					a.setMunicipality(m);
+					Address save = addressRepository.saveAndFlush(a);
+					l.setAddress(save);
+					libraryRepository.save(l);
+				}
 			
 				// Data publicazione libro
-				Address salvato = addressRepository.findByLatAndLonAndStreet(values[11].replaceAll("\"",""),values[12].replaceAll("\"",""),a.getStreet());
-				
-				System.out.println(l + "************ libray");
-				
-				
-				l.setAddress(salvato);
-				libraryRepository.save(l);
+//				Address salvato = addressRepository.findByLatAndLonAndStreet(values[11].replaceAll("\"",""),values[12].replaceAll("\"",""),a.getStreet());
+			
 				
 
 				line++;

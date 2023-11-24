@@ -62,6 +62,7 @@ public class SecurityConfig {
 						.requestMatchers(mvc.pattern("/province/**")).hasAnyRole("USER","MODERATOR")
 						.requestMatchers(mvc.pattern("/municipality/**")).hasAnyRole("USER","MODERATOR")
 						.requestMatchers(mvc.pattern("/user/**")).hasAnyRole("USER","MODERATOR")
+						.requestMatchers(mvc.pattern("/card/**")).hasAnyRole("USER","MODERATOR")
 						.requestMatchers(mvc.pattern("/booking/**")).hasAnyRole("USER","MODERATOR")
 						.anyRequest().authenticated())
 				.exceptionHandling(exception -> exception.authenticationEntryPoint(authenticationEntryPoint))

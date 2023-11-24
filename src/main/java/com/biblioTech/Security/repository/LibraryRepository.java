@@ -21,16 +21,27 @@ public interface LibraryRepository extends JpaRepository<Library, Long>,PagingAn
 
 	Page<Library> findAll(Pageable pageable);
 	
-	@Query(value="SELECT l.*\r\n"
+
+	@Query(value ="SELECT l.*,\r\n"
+			+ "  6371 * ACOS(\r\n"
+			+ "    SIN(RADIANS(CAST(REPLACE(:latitudine, ',', '.') AS double precision))) * SIN(RADIANS(CAST(REPLACE(a.lat, ',', '.') AS double precision))) +\r\n"
+			+ "    COS(RADIANS(CAST(REPLACE(:latitudine, ',', '.') AS double precision))) * COS(RADIANS(CAST(REPLACE(a.lat, ',', '.') AS double precision))) *\r\n"
+			+ "    COS(RADIANS(CAST(REPLACE(a.lon, ',', '.') AS double precision)) - RADIANS(CAST(REPLACE(:longitudine, ',', '.') AS double precision)))\r\n"
+			+ "  ) AS distance\r\n"
 			+ "FROM library l\r\n"
 			+ "JOIN address a ON l.address_id = a.id\r\n"
 			+ "WHERE\r\n"
 			+ "  6371 * ACOS(\r\n"
-			+ "    SIN(RADIANS(CAST(REPLACE(:latitudine,',','.')as double precision))) * SIN(RADIANS(CAST(REPLACE(a.lat, ',', '.')as double precision))) +\r\n"
-			+ "    COS(RADIANS(CAST(REPLACE(:latitudine,',','.')as double precision))) * COS(RADIANS(CAST(REPLACE(a.lat,',', '.') as double precision))) *\r\n"
-			+ "    COS(RADIANS(CAST(REPLACE(a.lon, ',', '.') as double precision)) - RADIANS(CAST(REPLACE(:longitudine,',','.')as double precision)))\r\n"
-			+ "  ) <= 100;", nativeQuery=true)
+			+ "    SIN(RADIANS(CAST(REPLACE(:latitudine, ',', '.') AS double precision))) * SIN(RADIANS(CAST(REPLACE(a.lat, ',', '.') AS double precision))) +\r\n"
+			+ "    COS(RADIANS(CAST(REPLACE(:latitudine, ',', '.') AS double precision))) * COS(RADIANS(CAST(REPLACE(a.lat, ',', '.') AS double precision))) *\r\n"
+			+ "    COS(RADIANS(CAST(REPLACE(a.lon, ',', '.') AS double precision)) - RADIANS(CAST(REPLACE(:longitudine, ',', '.') AS double precision)))\r\n"
+			+ "  ) <= 50\r\n"
+			+ "ORDER BY distance;",nativeQuery= true)
 	List<Library> findLibraryByGeolocalization(@Param("latitudine") String latitudine,@Param("longitudine") String lon);
+	
+	
+//	List<Library>findLibraryWithKeyWord();
+	
 	
 	Optional<Library> findByEmail(String email);
 
